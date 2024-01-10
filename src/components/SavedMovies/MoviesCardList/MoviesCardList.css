@@ -1,0 +1,13 @@
+.movies {
+    padding: 70px 70px 26px;
+}
+
+/* .movies__image {} */
+
+.movies__area {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

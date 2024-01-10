@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="layout.css">
+    <title>Document</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="header__block">
+            <div class="header__logo">
+                <img src="../images/logo.svg" alt="Логотип">
+            </div>
+            <div class="header__menu">
+                <p class="header__movies">Фильмы</p>
+                <p class="header__savedmovies">Сохраненные фильмы</p>
+            </div>
+
+            <div class="header__authorization">
+                <p class="header__signup">Регистрация</p>
+                <button class="header__signin">Войти</button>
+            </div>
+
+        </div>
+    </header>
+    <article class="hero">
+        <div>
+            <h1 class="hero__phrase">
+                Учебный проект студента факультета Веб-разработки.
+            </h1>
+            <div class="hero__buttons">
+                <button class="hero__button">О проекте</button>
+                <button class="hero__button">Технологии</button>
+                <button class="hero__button">Студент</button>
+            </div>
+        </div>
+    </article>
+    <article class="about">
+        <h2 class="about__header headers-block">О проекте</h2>
+        <div class="about__underline"></div>
+        <div class="about__columns">
+            <div class="about__column">
+                <h3 class="about__columnheader">Дипломный проект включал 5 этапов</h3>
+                <p class="about__columntext">Составление плана, работу над бэкендом, вёрстку, добавление
+                    функциональности и финальные доработки.</p>
+            </div>
+            <div class="about__column">
+                <h3 class="about__columnheader">На выполнение диплома ушло 5 недель</h3>
+                <p class="about__columntext">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать,
+                    чтобы успешно защититься.</p>
+            </div>
+        </div>
+        <div class="about__visualtrack">
+            <div class="about__oneweekbox about__grid-item">1 неделя</div>
+            <div class="about__fourweekbox about__grid-item">4 недели</div>
+            <div class="about__description about__grid-item">Back-end</div>
+            <div class="about__description about__grid-item">Front-end</div>
+        </div>
+    </article>
+    <article class="tech">
+        <h2 class="tech__header headers-block">Технологии</h2>
+        <div class="about__underline"></div>
+        <h4 class="tech__phrase">7 технологий</h4>
+        <p class="tech__description">На курсе веб-разработки мы освоили технологии, которые применили в дипломном
+            проекте.</p>
+        <div class="tech__buttons">
+            <div class="tech__button">HTML</div>
+            <div class="tech__button">CSS</div>
+            <div class="tech__button">JS</div>
+            <div class="tech__button">React</div>
+            <div class="tech__button">Git</div>
+            <div class="tech__button">Express.js</div>
+            <div class="tech__button">mongoDB</div>
+        </div>
+    </article>
+    <article class="student">
+        <h2 class="student__header headers-block">Студент</h2>
+        <div class="student__underline"></div>
+        <div class="student__infoblock">
+            <img class="student__photo" src="../images/pic__COLOR_pic.jpg"></img>
+            <div class="student__text">
+                <h4 class="student__name">Виталий</h4>
+                <p class="student__prof">Фронтенд-разработчик, 30 лет</p>
+                <p class="student__description">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня
+                    есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года
+                    работал в
+                    компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься
+                    фриланс-заказами и ушёл с постоянной работы.</p>
+                <p class="student__git">Github</p>
+            </div>
+        </div>
+        <div class="student__portfolio">
+            <h2 class="student__portfolio-header">Портфолио</h2>
+            <div class="student__portfolio-linkbox">
+                <p class="student__portfolio-link">Статичный сайт</p>
+                <img src="../images/arrow.svg">
+            </div>
+            <div class="student__portfolio-underline"></div>
+            <div class="student__portfolio-linkbox">
+                <p class="student__portfolio-link">Адаптивный сайт</p>
+                <img src="../images/arrow.svg">
+            </div>
+            <div class="student__portfolio-underline"></div>
+            <p class="student__portfolio-link"></p>
+            <div class="student__portfolio-linkbox">
+                <p class="student__portfolio-link">Одностраничное приложение</p>
+                <img src="../images/arrow.svg">
+            </div>
+        </div>
+    </article>
+    <footer class="footer">
+        <p class="footer__header">Учебный проект Яндекс.Практикум х BeatFilm.</p>
+        <div class="footer__underline"></div>
+        <div class="footer__credits">
+            <p class="footer__year">© 2023</p>
+            <div class="footer__links">
+                <div class="footer__link">Яндекс.Практикум</div>
+                <div class="footer__link">Github</div>
+            </div>
+        </div>
+    </footer>
+    <article class="search">
+        <div class="search__box">
+            <div class="search__input">
+                <input class="search__input-area" placeholder="Фильм">
+                <img class="search__enter" src="../images/findmovie.svg">
+            </div>
+            <div class="search__shorts">
+                <img class="search__shorts-thumb" src="../images/tumb.svg">
+                <p class="search__shorts-description">Короткометражки</p>
+            </div>
+            <div class="search__underline"></div>
+        </div>
+    </article>
+    <article class="movies">
+        <div class="movies__area">
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+            <div class="movies__card">
+                <div class="movies__imagebox">
+                    <img class="movies__image" src="../images/movie_example_1.jpg">
+                    <button class="movies__added-mark" type="button"></button>
+                </div>
+                <div class="movies__infobox">
+                    <p class="movies__card-description">33 слова о дизайне</p>
+                    <div class="movies__length">1ч 17м</div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="profile">
+        <h5 class="profile__header">Привет, "подставить имя"!</h5>
+        <div class="profile__fields">
+            <div class="profile__field">
+                <p class="profile__label">Имя</p>
+                <input class="profile__input" placeholder="подставить имя">
+            </div>
+            <div class="profile__underline"></div>
+            <div class="profile__field">
+                <p class="profile__label">E-mail</p>
+                <input class="profile__input" placeholder="pochta@yandex.ru">
+            </div>
+        </div>
+        <div class="profile__links">
+            <p class="profile__edit">Редактировать</p>
+            <p class="profile__exit">Выйти из аккаунта</p>
+        </div>
+    </article>
+    <article class="registration">
+        <div class="registration__logo"></div>
+        <h5 class="registration__header">Добро пожаловать!</h5>
+        <p class="registration__label">Имя</p>
+        <input class="registration__field">
+        <p class="registration__label">E-mail</p>
+        <input class="registration__field">
+        <p class="registration__label">Пароль</p>
+        <input class="registration__field">
+        <p class="registration__error-label">Что-то пошло не так...</p>
+        <button class="registration__submit">Зарегистрироваться</button>
+        <p class="registration__to-login">Уже зарегистрированы? <a class="registration__to-login-link"
+                href="/signin">Войти</a></p>
+    </article>
+    <article class="login">
+        <div class="login__logo"></div>
+        <h5 class="login__header">Рады видеть!</h5>
+        <p class="login__label">E-mail</p>
+        <input class="login__field">
+        <p class="login__label">Пароль</p>
+        <input class="login__field">
+        <button class="login__submit">Войти</button>
+        <p class="login__to-registration">Ещё не зарегистрированы? <a class="login__to-registration-link"
+                href="/signin">Регистрация</a></p>
+    </article>
+    <article class="error">
+        <h6 class="error__header">404</h6>
+        <p class="error__description">Страница не найдена</p>
+        <p class="error__go-back">Назад</p>
+    </article>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+* {
+    background-color: #202020;
+}
+
+.body {
+    font-family: Inter, Arial, sans-serif;
+}
+
+.headers-block {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    margin: 0px 0px 23px;
+}

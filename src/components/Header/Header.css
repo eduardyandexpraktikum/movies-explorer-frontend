@@ -1,0 +1,83 @@
+.header {
+    width: auto;
+    padding: 18px 0px 18px;
+    align-items: center;
+}
+
+.header__logo {
+    background-image: url(../../images/logo.svg);
+    height: 38px;
+    width: 38px;
+}
+
+.header__block {
+    height: 38px;
+    margin: 0px 70px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__menu {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+}
+
+.header__movies {
+    margin-right: 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__savedmovies {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__authorization {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+}
+
+.header__signup {
+    margin-right: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__signin {
+    display: flex;
+    background-color: #3DDC84;
+    color: #000;
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__profile {
+    display: flex;
+    width: 100px;
+    height: 32px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #313131;
+    border: none;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
