@@ -1,15 +1,21 @@
 function NavTab() {
     return (
-        <article className="hero">
+        <section className="hero">
             <h1 className="hero__phrase">
                 Учебный проект студента факультета Веб-разработки.
             </h1>
-            <div className="hero__buttons">
-                <button className="hero__button">О проекте</button>
-                <button className="hero__button">Технологии</button>
-                <button className="hero__button">Студент</button>
-            </div>
-        </article>
+            <nav className="hero__buttons">
+                <button className="hero__button" type="button">
+                    <a className="hero__buttonlinks" href="#about">О проекте</a>
+                </button>
+                <button className="hero__button" type="button">
+                    <a className="hero__buttonlinks" href="#tech">Технологии</a>
+                </button>
+                <button className="hero__button" type="button">
+                    <a className="hero__buttonlinks" href="#student">Студент</a>
+                </button>
+            </nav>
+        </section>
     )
 }
 

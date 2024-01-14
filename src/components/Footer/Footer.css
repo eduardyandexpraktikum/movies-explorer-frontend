@@ -1,5 +1,5 @@
 .footer {
-    margin-top: 79px;
+    margin-top: 39px;
     padding: 0px 70px 0px;
 }
 
@@ -10,12 +10,9 @@
     letter-spacing: 0px;
     text-align: center;
     color: #8B8B8B;
-}
-
-.footer__underline {
-    margin: 20px 0px;
-    height: 1px;
-    background-color: #424242;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #424242;
 }
 
 .footer__credits {
@@ -48,4 +45,46 @@
     letter-spacing: 0px;
     text-align: right;
     margin: 0px 20px 0px 0px;
+}
+
+.footer__link:nth-of-type(2) {
+    margin: 0px;
+}
+
+@media screen and (max-width: 800px) {
+    .footer {
+        padding: 0px 30px 0px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .footer {
+        padding: 0px 10px 0px;
+    }
+
+    .footer__header {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .footer__credits {
+        flex-direction: column-reverse;
+    }
+
+    .footer__link {
+        font-size: 12px;
+        line-height: 15px;
+        margin: 10px 0px 10px;
+    }
+
+    .footer__links {
+        flex-direction: column;
+    }
+
+    .footer__year {
+        margin: 30px auto 0px;
+        font-size: 12px;
+        line-height: 15px;
+    }
 }

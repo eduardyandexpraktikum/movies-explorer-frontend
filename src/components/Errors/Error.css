@@ -32,3 +32,32 @@
     text-align: center;
     color: #4285F4;
 }
+
+@media screen and (max-width: 800px) {
+    .error {
+        margin: 407px auto 60px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .error {
+        margin: 329px auto 60px;
+    }
+
+    .error__header {
+        font-family: Inter;
+        font-size: 80px;
+        line-height: 97px;
+    }
+
+    .error__description {
+        font-size: 12px;
+        line-height: 15px;
+        margin: 10px auto 284px;
+    }
+
+    .error__go-back {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

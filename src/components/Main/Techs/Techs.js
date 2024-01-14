@@ -1,21 +1,20 @@
 function Techs() {
     return (
-        <article className="tech">
+        <section id="tech" className="tech">
             <h2 className="tech__header headers-block">Технологии</h2>
-            <div className="about__underline"></div>
-            <h4 className="tech__phrase">7 технологий</h4>
+            <h3 className="tech__phrase">7 технологий</h3>
             <p className="tech__description">На курсе веб-разработки мы освоили технологии, которые применили в дипломном
                 проекте.</p>
-            <div className="tech__buttons">
-                <div className="tech__button">HTML</div>
-                <div className="tech__button">CSS</div>
-                <div className="tech__button">JS</div>
-                <div className="tech__button">React</div>
-                <div className="tech__button">Git</div>
-                <div className="tech__button">Express.js</div>
-                <div className="tech__button">mongoDB</div>
-            </div>
-        </article>
+            <ul className="tech__buttons">
+                <li className="tech__button">HTML</li>
+                <li className="tech__button">CSS</li>
+                <li className="tech__button">JS</li>
+                <li className="tech__button">React</li>
+                <li className="tech__button">Git</li>
+                <li className="tech__button">Express.js</li>
+                <li className="tech__button">mongoDB</li>
+            </ul>
+        </section>
     )
 }
 

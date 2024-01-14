@@ -6,7 +6,8 @@
 }
 
 .about__header {
-    margin: 0px 0px 23px;
+    margin: 0px 0px 25px;
+    padding-bottom: 23px;
 }
 
 .about__underline {
@@ -18,11 +19,8 @@
     display: flex;
     flex-direction: row;
     margin-top: 70px;
-    margin-bottom: 110px;
-}
-
-.about__column {
-    margin-right: 30px;
+    margin-bottom: 111px;
+    gap: 40px;
 }
 
 
@@ -71,4 +69,104 @@
 
 .about__columnheader {
     margin: 0px;
+    font-weight: 400;
+}
+
+.about__columntext {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 26px 0px 0px;
+}
+
+@media screen and (max-width: 800px) {
+
+    .about {
+        min-height: 388px;
+        color: #fff;
+        width: auto;
+        padding: 90px 50px 81px;
+    }
+
+    .about__columnheader {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.04em;
+        text-align: left;
+    }
+
+    .about__columntext {
+        line-height: 20px;
+        margin: 20px 0px 0px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about__columns {
+        margin-bottom: 94px;
+    }
+
+    .about__visualtrack {
+        row-gap: 4px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .about {
+        min-height: 388px;
+        color: #fff;
+        width: auto;
+        padding: 71px 18px 59px;
+    }
+
+    .about__columns {
+        flex-direction: column;
+        margin-top: 60px;
+        margin-bottom: 111px;
+        gap: 40px;
+    }
+
+    .about__columnheader {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .about__columntext {
+        font-size: 11px;
+        line-height: 16px;
+        margin-top: 16px;
+    }
+
+    .about__columns {
+        row-gap: 56px;
+        margin-bottom: 60px;
+    }
+
+    .about__visualtrack {
+        display: grid;
+        grid-template-columns: 100fr 184fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 0px;
+    }
+
+    .about__oneweekbox {
+        font-size: 11px;
+        line-height: 13px;
+        height: 35px;
+    }
+
+    .about__fourweekbox {
+        font-size: 11px;
+        line-height: 13px;
+        height: 35px;
+    }
+
+    .about__description {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
 }

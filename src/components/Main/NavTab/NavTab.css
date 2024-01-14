@@ -14,7 +14,7 @@
     letter-spacing: -0.04em;
     text-align: center;
     max-width: 730px;
-    padding: 160px 0px;
+    padding: 160px 0px 151px;
     margin: auto;
     background-color: transparent;
 }
@@ -39,5 +39,59 @@
     width: 96px;
     height: 36px;
     border-radius: 10px;
+}
+
+.hero__buttonlinks {
+    text-decoration: none;
     color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .hero {
+        min-height: 493px;
+        width: auto;
+        margin: 20px 20px 0px;
+        background-color: #272727;
+        border-radius: 10px;
+    }
+
+    .hero__phrase {
+        max-width: 680px;
+        padding: 351px 0px 314px;
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .hero__buttons {
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero {
+        min-height: 493px;
+        width: auto;
+        margin: 16px 14px 0px;
+        background-color: #272727;
+        border-radius: 10px;
+    }
+
+    .hero__phrase {
+        padding: 218px 0px 212px;
+        font-size: 29px;
+        line-height: 37px;
+    }
+
+    .hero__button {
+        width: 82px;
+        height: 26px;
+        border-radius: 6px;
+    }
+
+    .hero__buttons {
+        max-width: 258px;
+        font-size: 10px;
+        line-height: 16px;
+        padding-bottom: 17px;
+    }
 }

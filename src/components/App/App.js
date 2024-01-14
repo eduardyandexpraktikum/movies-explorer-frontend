@@ -17,8 +17,10 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 function App() {
+    document.documentElement.lang = 'ru';
+
     return (
-        <div class="body">
+        <main class="body">
             <Routes>
 
                 <Route
@@ -78,7 +80,7 @@ function App() {
                 <Route path="*" element={<Error />} />
 
             </Routes>
-        </div>
+        </main>
     );
 }
 

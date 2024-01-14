@@ -4,11 +4,12 @@ import MovieCard from "../MoviesCard/MoviesCard";
 
 function MovieCardList() {
     return (
-        <article className="movies">
-            <div className="movies__area">
+        <section className="movies">
+            <ul className="movies__area">
                 <MovieCard />
-            </div>
-        </article>
+                <button className="movies__more">Еще</button>
+            </ul>
+        </section>
     )
 }
 
