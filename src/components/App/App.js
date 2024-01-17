@@ -20,67 +20,77 @@ function App() {
     document.documentElement.lang = 'ru';
 
     return (
-        <main class="body">
-            <Routes>
+        <Routes>
 
-                <Route
-                    path={'/'}
-                    element={<>
-                        <Header />
+            <Route
+                path={'/'}
+                element={<>
+                    <Header />
+                    <main>
                         <NavTab />
                         <AboutProject />
                         <Techs />
                         <AboutMe />
-                        <Footer />
-                    </>
-                    }
-                />
-                <Route
-                    path={'/movies'}
-                    element={<>
-                        <Header />
+                    </main >
+                    <Footer />
+                </>
+                }
+            />
+            <Route
+                path={'/movies'}
+                element={<>
+                    <Header />
+                    <main>
                         <SearchForm />
                         <MoviesCardList />
-                        <Footer />
-                    </>
-                    }
-                />
-                <Route
-                    path={'/saved-movies'}
-                    element={<>
-                        <Header />
+                    </main>
+                    <Footer />
+                </>
+                }
+            />
+            <Route
+                path={'/saved-movies'}
+                element={<>
+                    <Header />
+                    <main >
                         <SearchForm />
                         <SavedMovieCardList />
-                        <Footer />
-                    </>
-                    }
-                />
-                <Route
-                    path={'/profile'}
-                    element={<>
-                        <Header />
+                    </main>
+                    <Footer />
+                </>
+                }
+            />
+            <Route
+                path={'/profile'}
+                element={<>
+                    <Header />
+                    <main >
                         <Profile />
-                    </>
-                    }
-                />
-                <Route
-                    path={'/signup'}
-                    element={<>
+                    </main>
+                </>
+                }
+            />
+            <Route
+                path={'/signup'}
+                element={<>
+                    <main >
                         <Register />
-                    </>
-                    }
-                />
-                <Route
-                    path={'/signin'}
-                    element={<>
+                    </main>
+                </>
+                }
+            />
+            <Route
+                path={'/signin'}
+                element={<>
+                    <main >
                         <Login />
-                    </>
-                    }
-                />
-                <Route path="*" element={<Error />} />
+                    </main>
+                </>
+                }
+            />
+            <Route path="*" element={<Error />} />
 
-            </Routes>
-        </main>
+        </Routes>
     );
 }
 

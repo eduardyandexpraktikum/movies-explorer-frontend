@@ -94,7 +94,7 @@ input:focus {
 @media screen and (max-width: 800px) {
     .registration {
         max-width: 396px;
-        margin: 70px auto;
+        margin: 232px auto 0px;
     }
 
     .registration__logo {

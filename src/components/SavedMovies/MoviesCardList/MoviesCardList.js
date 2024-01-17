@@ -4,10 +4,8 @@ import MovieCard from "../MoviesCard/MoviesCard";
 
 function SavedMovieCardList() {
     return (
-        <section className="movies">
-            <div className="movies__area">
-                <MovieCard />
-            </div>
+        <section className="movies body">
+            <MovieCard />
         </section>
     )
 }

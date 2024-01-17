@@ -79,6 +79,13 @@
     color: #4285F4;
 }
 
+@media screen and (max-width: 800px) {
+
+    .login {
+        margin-top: 232px;
+    }
+}
+
 @media screen and (max-width: 400px) {
 
     .login {

@@ -1,7 +1,7 @@
 .tech {
     color: #fff;
     width: auto;
-    padding: 95px 70px 99px;
+    padding: 91px 70px 99px;
     background-color: #272727;
 }
 
@@ -38,6 +38,7 @@
     padding: 100px 0px 0px;
     gap: 10px;
     background-color: transparent;
+    justify-content: center;
 }
 
 .tech__button {
@@ -88,6 +89,20 @@
 
 }
 
+@media screen and (max-width: 650px) {
+
+    .tech__buttons {
+        flex-wrap: wrap;
+        padding-top: 51px;
+        max-width: 180px;
+    }
+
+    .tech__button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
 @media screen and (max-width: 400px) {
     .tech {
         padding: 70px 18px 70px;
@@ -106,13 +121,6 @@
     }
 
     .tech__buttons {
-        flex-wrap: wrap;
-        padding-top: 51px;
-        max-width: 180px;
-    }
-
-    .tech__button {
-        font-size: 12px;
-        line-height: 15px;
+        justify-content: start;
     }
 }

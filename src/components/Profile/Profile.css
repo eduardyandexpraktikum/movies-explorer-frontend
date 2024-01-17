@@ -1,5 +1,6 @@
 .profile {
     margin: 74px auto 70px;
+    padding: 0px 30px 0px;
 }
 
 .profile__header {
@@ -69,6 +70,7 @@
 }
 
 .profile__exit {
+    display: flex;
     color: #EE3465;
     font-size: 13px;
     font-weight: 500;
@@ -76,4 +78,5 @@
     letter-spacing: 0px;
     text-align: center;
     text-decoration: none;
+    justify-content: center;
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function Profile() {
     return (
         <section className="profile">
-            <h1 className="profile__header">Привет, "подставить имя"!</h1>
+            <h1 className="profile__header">Привет, ты!</h1>
             <form>
                 <div className="profile__fields">
                     <div className="profile__field">
@@ -20,7 +20,7 @@ export function Profile() {
             <div className="profile__links">
                 <p className="profile__edit">Редактировать</p>
 
-                <Link to={'/signin'}><div className="profile__exit">Выйти из аккаунта</div></Link>
+                <Link to={'/signin'} className="profile__exit">Выйти из аккаунта</Link>
             </div>
         </section >
     )

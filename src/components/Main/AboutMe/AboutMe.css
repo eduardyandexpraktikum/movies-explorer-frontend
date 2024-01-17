@@ -44,6 +44,7 @@
     line-height: 22px;
     letter-spacing: 0px;
     text-align: left;
+    margin-bottom: 100px;
 }
 
 .student__git {
@@ -52,7 +53,9 @@
     line-height: 17px;
     letter-spacing: 0em;
     text-align: left;
-    margin: 100px 0px 0px;
+    margin: 0px;
+    color: #fff;
+    text-decoration: none;
 }
 
 .student__photo {
@@ -80,7 +83,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid #DADADA;
+    border-bottom: 1px solid #424242;
     padding: 0px 0px 19px;
     margin-bottom: 20px;
 }
@@ -92,6 +95,12 @@
     line-height: 50px;
     letter-spacing: -0.04em;
     text-align: left;
+    text-decoration: none;
+    color: #fff;
+}
+
+.student__portfolio-linkbox:nth-of-type(3) {
+    border-bottom: none;
 }
 
 .student__arrow {
@@ -124,7 +133,7 @@
     }
 
     .student__description {
-        margin: 0px;
+        margin-bottom: 85px;
         font-size: 12px;
         line-height: 18px;
     }
@@ -163,10 +172,12 @@
     .student__photo {
         width: 292px;
         height: 352px;
+        margin: 0px auto 0px;
     }
 
     .student__text {
-        margin-top: 40px;
+        margin: 40px auto 0px;
+        max-width: 292px;
     }
 
     .student__name {
@@ -218,10 +229,19 @@
 }
 
 @media screen and (max-width: 400px) {
+
+    .student {
+        padding-bottom: 97px;
+    }
+
     .student__portfolio-header {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 0px;
         margin-top: 70px;
+    }
+
+    .student__description {
+        margin-bottom: 40px;
     }
 }

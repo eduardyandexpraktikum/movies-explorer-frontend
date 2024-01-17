@@ -31,6 +31,11 @@
     letter-spacing: 0em;
     text-align: center;
     color: #4285F4;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {

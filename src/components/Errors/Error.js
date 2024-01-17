@@ -4,11 +4,15 @@ export function Error() {
 
     const navigate = useNavigate();
 
+    function goBack() {
+        navigate(-1);
+    }
+
     return (
         <article className="error">
             <h6 className="error__header">404</h6>
             <p className="error__description">Страница не найдена</p>
-            <div className="error__go-back"><a href={() => navigate(-1)}>Назад</a></div>
+            <button className="error__go-back" onClick={goBack}>Назад</button>
         </article>
     )
 }

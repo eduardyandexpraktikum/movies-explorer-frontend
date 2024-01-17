@@ -1,19 +1,21 @@
 * {
     background-color: #202020;
+    font-family: Inter, Arial, sans-serif;
 }
 
-.a {
+a {
     text-decoration: none;
 }
 
-.body {
-    font-family: Inter, Arial, sans-serif;
+body {
     max-width: 1280px;
     margin: 0px auto 0px;
 }
 
 ul {
     list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
 }
 
 .headers-block {

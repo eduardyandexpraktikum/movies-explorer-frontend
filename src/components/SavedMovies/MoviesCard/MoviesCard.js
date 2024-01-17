@@ -1,6 +1,6 @@
 function SavedMovieCard() {
     return (
-        <>
+        <div className="movies__area">
             <li class="movie__card">
                 <div className="movie__imagebox">
                     <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
@@ -21,7 +21,7 @@ function SavedMovieCard() {
                     <div className="movie__length">1ч 17м</div>
                 </div>
             </li>
-        </>
+        </div>
     )
 }
 

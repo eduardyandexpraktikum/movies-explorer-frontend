@@ -5,10 +5,8 @@ import MovieCard from "../MoviesCard/MoviesCard";
 function MovieCardList() {
     return (
         <section className="movies">
-            <ul className="movies__area">
-                <MovieCard />
-                <button className="movies__more">Еще</button>
-            </ul>
+            <MovieCard />
+            <button className="movies__more" type="button">Еще</button>
         </section>
     )
 }

@@ -4,6 +4,7 @@
     margin: 20px 40px 0px;
     background-color: #272727;
     border-radius: 10px;
+    max-width: 1200px;
 }
 
 .hero__phrase {
@@ -29,16 +30,19 @@
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0px;
-    text-align: left;
-    background-color: transparent;
+    text-align: center;
+    background-color: #272727;
 }
 
 .hero__button {
+    display: flex;
     background-color: #303030;
     border: none;
     width: 96px;
     height: 36px;
     border-radius: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero__buttonlinks {

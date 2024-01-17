@@ -1,14 +1,23 @@
+import { useState } from "react";
+
 function SearchForm() {
+
+    const [isTumbDisabled, setIsTumbDisabled] = useState(false);
+
+    function tumbSwitch() {
+        setIsTumbDisabled(!isTumbDisabled)
+    }
+
     return (
         <section className="search">
             <div className="search__box">
                 <form>
                     <div className="search__input">
-                        <input className="search__input-area" placeholder="Фильм" />
-                        <img className="search__enter" src={require("../../../images/find-3.png")} alt="Найти фильм" />
+                        <input className="search__input-area" placeholder="Фильм" type="text" />
+                        <button className="search__enter" type="button" />
                     </div>
                     <div className="search__shorts">
-                        <img className="search__shorts-thumb" src={require("../../../images/smalltumb.png")} alt="Только короткометражки" />
+                        <button className={`search__shorts-tumb ${!isTumbDisabled ? "" : "search__shorts-tumb-disabled"}`} onClick={tumbSwitch} type="button" />
                         <p className="search__shorts-description">Короткометражки</p>
                     </div>
                 </form>

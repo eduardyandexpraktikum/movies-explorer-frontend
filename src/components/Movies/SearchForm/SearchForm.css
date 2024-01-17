@@ -1,5 +1,5 @@
 .search {
-    padding: 80px 30px 10px;
+    padding: 80px 70px 10px;
 }
 
 .search__input {
@@ -19,6 +19,13 @@
 
 .search__enter {
     height: 44px;
+    min-width: 44px;
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-image: url("../../../images/findmovie.svg");
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
 }
 
 .search__shorts {
@@ -28,6 +35,19 @@
     justify-content: center;
     padding-bottom: 38px;
     border-bottom: 1px solid #424242;
+}
+
+.search__shorts-tumb {
+    background-image: url(../../../images/smalltumb.png);
+    width: 36px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.search__shorts-tumb-disabled {
+    background-image: url(../../../images/smalltumboff.png);
 }
 
 .search__shorts-description {
@@ -50,6 +70,10 @@ input::placeholder {
 }
 
 @media screen and (max-width: 800px) {
+
+    .search {
+        padding: 80px 30px 10px;
+    }
 
     .search__shorts {
         margin: 38px auto 0px;
