@@ -12,6 +12,10 @@ body {
     margin: 0px auto 0px;
 }
 
+.fix-scroll {
+    overflow: hidden;
+}
+
 ul {
     list-style-type: none;
     padding-left: 0px;

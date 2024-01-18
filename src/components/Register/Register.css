@@ -206,4 +206,9 @@ input:focus {
         font-size: 12px;
         line-height: 15px;
     }
+
+    .registration__logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

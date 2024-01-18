@@ -7,7 +7,9 @@ function Header() {
 
     function burgerOpener() {
         setIsBurgerOpen(!isBurgerOpen);
+        document.body.classList.toggle('fix-scroll')
     }
+
 
     const { pathname } = useLocation();
 
@@ -18,8 +20,12 @@ function Header() {
                 <Link to={'/'} className={'header__logo'}></Link>
                 {pathname !== "/" && (
                     <div className="header__menu">
-                        <Link to={'/movies'} className={'header__movies'}>Фильмы</Link>
-                        <Link to={'/saved-movies'} className={'header__savedmovies'}>Сохраненные фильмы</Link>
+                        <div className="header__linkblock">
+                            <Link to={'/'} className={'header__main'}>Главная</Link>
+                            <Link to={'/movies'} className={'header__movies'}>Фильмы</Link>
+                            <Link to={'/saved-movies'} className={'header__savedmovies'}>Сохранённые фильмы</Link>
+                            <Link to={'/profile'} className={'header__profile-burger'}>Аккаунт</Link>
+                        </div>
                     </div>)}
                 <div className="header__authorization">
                     {pathname === "/" ? (
@@ -37,9 +43,8 @@ function Header() {
                     )}
 
                 </div>
-
             </div>
-        </header>
+        </header >
     )
 }
 

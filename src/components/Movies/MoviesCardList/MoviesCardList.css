@@ -1,18 +1,19 @@
-.movies {
+.movie {
     padding: 70px 30px 85px;
     min-height: 445px;
 }
 
-.movies__area {
+.movie__area {
     display: flex;
     flex-direction: row;
     column-gap: 30px;
     row-gap: 58px;
     justify-content: center;
     flex-wrap: wrap;
+    list-style-type: none;
 }
 
-.movies__more {
+.movie__more {
     width: 320px;
     height: 36px;
     font-size: 12px;
@@ -31,40 +32,41 @@
 }
 
 @media screen and (max-width: 850px) {
-    .movies {
+    .movie {
         padding: 70px 0px 26px;
     }
 
-    .movies__area {
+    .movie__area {
         margin-top: 0px;
         row-gap: 44px;
+        justify-content: start;
     }
 
-    .movies__more {
-        margin: 61px auto 94px;
+    .movie__more {
+        margin: 61px auto 119px;
     }
 
 }
 
 @media screen and (max-width: 780px) {
 
-    .movies {
-        padding: 70px 30px 26px;
+    .movie {
+        padding: 70px 30px 2px;
     }
 }
 
 
 @media screen and (max-width: 400px) {
-    .movies {
+    .movie {
         padding: 40px 10px 26px;
         margin-bottom: 133px;
     }
 
-    .movies__area {
-        row-gap: 35px;
+    .movie__area {
+        row-gap: 36px;
     }
 
-    .movies__more {
+    .movie__more {
         margin-top: 61px;
         margin-bottom: 0px;
         width: 240px;

@@ -4,9 +4,9 @@ import MovieCard from "../MoviesCard/MoviesCard";
 
 function SavedMovieCardList() {
     return (
-        <section className="movies body">
+        <div className="movie savedmovie">
             <MovieCard />
-        </section>
+        </div>
     )
 }
 

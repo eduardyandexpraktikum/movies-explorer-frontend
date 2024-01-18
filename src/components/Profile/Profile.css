@@ -80,3 +80,18 @@
     text-decoration: none;
     justify-content: center;
 }
+
+@media screen and (max-width: 400px) {
+    .profile {
+        margin: 70px auto 70px;
+    }
+
+    .profile__header {
+        margin-bottom: 81px;
+    }
+
+    .profile__links {
+        margin-top: 375px;
+    }
+
+}

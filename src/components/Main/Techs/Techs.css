@@ -95,6 +95,7 @@
         flex-wrap: wrap;
         padding-top: 51px;
         max-width: 180px;
+        justify-content: start;
     }
 
     .tech__button {
@@ -118,9 +119,5 @@
     .tech__description {
         font-size: 11px;
         line-height: 16px;
-    }
-
-    .tech__buttons {
-        justify-content: start;
     }
 }

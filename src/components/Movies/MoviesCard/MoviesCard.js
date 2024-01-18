@@ -1,6 +1,6 @@
 function MovieCard() {
     return (
-        <ul className="movies__area">
+        <ul className="movie__area">
             <li className="movie__card">
                 <div className="movie__imagebox">
                     <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />

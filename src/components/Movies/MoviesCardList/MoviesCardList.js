@@ -4,10 +4,10 @@ import MovieCard from "../MoviesCard/MoviesCard";
 
 function MovieCardList() {
     return (
-        <section className="movies">
+        <div className="movie">
             <MovieCard />
-            <button className="movies__more" type="button">Еще</button>
-        </section>
+            <button className="movie__more" type="button">Еще</button>
+        </div>
     )
 }
 
