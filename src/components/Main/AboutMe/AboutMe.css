@@ -1,0 +1,251 @@
+.student {
+    padding: 110px 70px 125px;
+    width: auto;
+    color: #fff;
+}
+
+.student__header {
+    margin: 0px;
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 23px;
+}
+
+.student__infoblock {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 66px;
+}
+
+.student__name {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    margin: 0px;
+}
+
+.student__prof {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin: 18px 0px 26px;
+}
+
+.student__text {
+    margin-right: 270px;
+}
+
+.student__description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 100px;
+}
+
+.student__git {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.student__photo {
+    border-radius: 10px;
+    width: 270px;
+    height: 327px;
+}
+
+.student__portfolio {
+    margin-top: 50px;
+    margin-bottom: 18px;
+}
+
+.student__portfolio-header {
+    margin: 100px 0px 0px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #8B8B8B;
+}
+
+.student__portfolio-linkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+    padding: 0px 0px 19px;
+    margin-bottom: 20px;
+}
+
+.student__portfolio-link {
+    margin: 0px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+}
+
+.student__portfolio-linkbox:nth-of-type(3) {
+    border-bottom: none;
+}
+
+.student__arrow {
+    height: 18px;
+    max-width: 100%;
+    display: flex;
+    align-self: center;
+    padding: 8px 6px 0px 0px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .student {
+        padding: 90px 50px;
+    }
+
+    .student__text {
+        margin-right: 49px;
+    }
+
+    .student__name {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .student__prof {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 18px;
+    }
+
+    .student__description {
+        margin-bottom: 85px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .student__photo {
+        width: 255px;
+        height: 307px;
+    }
+
+    .student__git {
+        margin-top: 87px;
+    }
+
+    .student__portfolio-header {
+        margin-top: 90px;
+    }
+
+    .student__portfolio {
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+
+    .student__portfolio-link {
+        font-size: 28px;
+        line-height: 50px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .student {
+        padding: 71px 14px;
+    }
+
+    .student__infoblock {
+        margin-top: 60px;
+        flex-direction: column;
+    }
+
+    .student__photo {
+        width: 292px;
+        height: 352px;
+        margin: 0px auto 0px;
+    }
+
+    .student__text {
+        margin: 40px auto 0px;
+        max-width: 292px;
+    }
+
+    .student__name {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .student__prof {
+        font-size: 11px;
+        line-height: 16px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .student__description {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .student__git {
+        margin-top: 40px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .student__portfolio {
+        margin-top: 40px;
+        margin-bottom: 17px;
+    }
+
+    .student__portfolio-header {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0px;
+        margin-top: 70px;
+    }
+
+    .student__portfolio-link {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .student__arrow {
+        padding: 5px;
+        width: 10px;
+        height: 10px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .student {
+        padding-bottom: 97px;
+    }
+
+    .student__portfolio-header {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0px;
+        margin-top: 70px;
+    }
+
+    .student__description {
+        margin-bottom: 40px;
+    }
+}

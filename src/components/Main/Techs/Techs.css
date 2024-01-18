@@ -1,0 +1,123 @@
+.tech {
+    color: #fff;
+    width: auto;
+    padding: 91px 70px 99px;
+    background-color: #272727;
+}
+
+.tech__header {
+    background-color: transparent;
+}
+
+.tech__phrase {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    text-align: center;
+    margin: 90px 0px 26px;
+    background-color: transparent;
+}
+
+.tech__description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+    text-align: center;
+    max-width: 460px;
+    margin: 0px auto 0px;
+    background-color: transparent;
+}
+
+.tech__buttons {
+    display: flex;
+    flex-direction: row;
+    max-width: 690px;
+    margin: 0px auto 0px;
+    padding: 100px 0px 0px;
+    gap: 10px;
+    background-color: transparent;
+    justify-content: center;
+}
+
+.tech__button {
+    background-color: #303030;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: -0.04em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 60px;
+}
+
+@media screen and (max-width: 800px) {
+    .tech {
+        padding: 90px 50px;
+    }
+
+    .tech__header {
+        background-color: transparent;
+        padding-bottom: 23px;
+    }
+
+    .tech__phrase {
+        margin-top: 80px;
+        margin-bottom: 23px;
+    }
+
+
+    .tech__description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .tech__buttons {
+        padding-top: 82px;
+        margin: auto;
+    }
+
+    .tech__button {
+        width: 84px;
+        height: 57px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .tech__buttons {
+        flex-wrap: wrap;
+        padding-top: 51px;
+        max-width: 180px;
+        justify-content: start;
+    }
+
+    .tech__button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tech {
+        padding: 70px 18px 70px;
+        background-color: #202020;
+    }
+
+    .tech__phrase {
+        font-size: 30px;
+        line-height: 36px;
+        margin-top: 60px;
+    }
+
+    .tech__description {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}

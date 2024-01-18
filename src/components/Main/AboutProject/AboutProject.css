@@ -1,0 +1,177 @@
+.about {
+    min-height: 388px;
+    color: #fff;
+    width: auto;
+    padding: 110px 70px;
+}
+
+.about__header {
+    margin: 0px 0px 25px;
+    padding-bottom: 23px;
+}
+
+.about__underline {
+    height: 1px;
+    background-color: #DADADA;
+}
+
+.about__columns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    margin-bottom: 111px;
+    gap: 52px;
+}
+
+
+.about__visualtrack {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 5px;
+}
+
+.about__oneweekbox {
+    color: #000;
+    background-color: #3DDC84;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    height: 36px;
+}
+
+.about__fourweekbox {
+    color: #fff;
+    background-color: #303030;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    height: 36px;
+}
+
+.about__description {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0px;
+    color: #8B8B8B;
+}
+
+.about__grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.about__columnheader {
+    margin: 0px;
+    font-weight: 400;
+}
+
+.about__columntext {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 26px 0px 0px;
+}
+
+@media screen and (max-width: 800px) {
+
+    .about {
+        min-height: 388px;
+        color: #fff;
+        width: auto;
+        padding: 90px 50px 81px;
+    }
+
+    .about__columnheader {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.04em;
+        text-align: left;
+    }
+
+    .about__columntext {
+        line-height: 20px;
+        margin: 20px 0px 0px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about__columns {
+        margin-bottom: 94px;
+        gap: 38px;
+    }
+
+    .about__visualtrack {
+        row-gap: 4px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .about__columns {
+        flex-direction: column;
+        margin-top: 60px;
+        margin-bottom: 111px;
+        gap: 40px;
+    }
+
+    .about__visualtrack {
+        display: grid;
+        grid-template-columns: 100fr 184fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 0px;
+    }
+
+    .about__oneweekbox {
+        font-size: 11px;
+        line-height: 13px;
+        height: 35px;
+    }
+
+    .about__fourweekbox {
+        font-size: 11px;
+        line-height: 13px;
+        height: 35px;
+    }
+
+    .about__description {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .about {
+        min-height: 388px;
+        color: #fff;
+        width: auto;
+        padding: 71px 18px 59px;
+    }
+
+    .about__columnheader {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .about__columntext {
+        font-size: 11px;
+        line-height: 16px;
+        margin-top: 16px;
+    }
+
+    .about__columns {
+        row-gap: 56px;
+        margin-bottom: 60px;
+    }
+
+}

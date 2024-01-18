@@ -1,0 +1,320 @@
+.header {
+    width: auto;
+    padding: 18px 0px 18px;
+    align-items: center;
+    max-width: 1280px;
+}
+
+.header__logo {
+    background-image: url(../../images/logo.svg);
+    height: 38px;
+    width: 38px;
+}
+
+.header__block {
+    height: 38px;
+    margin: 0px 70px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__menu {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    padding-left: 55px;
+}
+
+.header__main {
+    display: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.header__movies {
+    text-decoration: none;
+    color: #fff;
+    padding-right: 16px;
+    padding-left: 8px;
+}
+
+.header__savedmovies {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__authorization {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+}
+
+.header__signup {
+    margin-right: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__signin {
+    display: flex;
+    background-color: #3DDC84;
+    color: #000;
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__profile {
+    display: flex;
+    width: 100px;
+    height: 32px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #313131;
+    border: none;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.header__profile-burger {
+    display: none;
+    width: 100px;
+    height: 32px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #313131;
+    border: none;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.header__burger {
+    display: none;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 10px 8px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header__burger span {
+    position: absolute;
+    background-color: #fff;
+    width: 28px;
+    height: 3px;
+    left: 8px;
+    transition: transform .3s, opacity .3s;
+}
+
+.header__burger span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header__burger span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.header.burger-open .header__burger span:nth-child(1) {
+    transform: translateY(0) rotate(45deg) scale(0.78);
+}
+
+.header.burger-open .header__burger span:nth-child(2) {
+    transform: rotate(-45deg) scale(0.78);
+}
+
+.header.burger-open .header__burger span:nth-child(3) {
+    opacity: 0;
+}
+
+@media screen and (max-width: 800px) {
+
+    .header__block {
+        height: 38px;
+        margin: 0px 30px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header__burger {
+        display: block;
+        z-index: 3;
+    }
+
+    .header__menu {
+        position: absolute;
+        top: 0;
+        background-color: rgb(32, 32, 32, .3);
+        flex-direction: column;
+        justify-content: start;
+        width: 100vw;
+        height: 100%;
+        z-index: -1;
+        padding-left: 0px;
+        display: none;
+    }
+
+    .header__linkblock {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 160px;
+        background-color: #202020;
+        justify-content: flex-start;
+        width: 540px;
+        height: 100vh;
+        transition: transform .3s;
+        padding-right: 20px;
+    }
+
+    .header__profile {
+        display: none;
+    }
+
+    .header__profile-burger {
+        display: flex;
+        margin: 621px auto 0px;
+    }
+
+    .header__main {
+        display: block;
+        padding-bottom: 28px;
+        color: #fff;
+    }
+
+    .header__movies {
+        padding: 0px 0px 4px;
+        margin: 0px auto 22px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .header__savedmovies {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .header.burger-open .header__menu {
+        z-index: 2;
+        position: fixed;
+        display: block;
+    }
+
+    .header.burger-open .header__profile {
+        z-index: 2;
+        position: fixed;
+    }
+
+    .header.burger-open .header__burger {
+        position: fixed;
+        right: 16px;
+    }
+
+    .header.burger-open .header__movies {
+        border-bottom: 2px solid #fff;
+    }
+
+    /* 
+    .header.burger-open * {
+        overflow: hidden;
+    } */
+}
+
+@media screen and (max-width: 540px) {
+    .header.burger-open .header__menu {
+        position: static;
+        margin: 0px auto 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header.burger-open .header__burger {
+        padding: 0px;
+        right: 9px;
+        top: 6px;
+    }
+
+    .header__linkblock {
+        padding: 145px 0px 0px;
+        width: 100%;
+    }
+
+    .header__main {
+        text-align: center;
+        padding-bottom: 24px;
+    }
+
+    .header__movies {
+        padding-bottom: 6px;
+        margin: 0px auto 16px;
+        border-bottom: 2px solid #fff;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .header__block {
+        margin: 0px 14px 0px;
+    }
+
+    .header__signup {
+        font-size: 10px;
+        letter-spacing: 0px;
+        text-align: right;
+        margin-right: 14px;
+    }
+
+    .header__signin {
+        width: 54px;
+        height: 26px;
+        border-radius: 3px;
+    }
+
+    .header__burger span {
+        width: 22px;
+        height: 2px;
+        left: 13px;
+    }
+
+    .header__burger {
+        padding: 0px;
+    }
+}
