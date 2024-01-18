@@ -215,7 +215,8 @@
     }
 
     .header__movies {
-        padding: 0px 0px 28px;
+        padding: 0px 0px 4px;
+        margin: 0px auto 22px;
         font-size: 18px;
         font-weight: 500;
         line-height: 22px;
@@ -247,9 +248,14 @@
         right: 16px;
     }
 
+    .header.burger-open .header__movies {
+        border-bottom: 2px solid #fff;
+    }
+
+    /* 
     .header.burger-open * {
         overflow: hidden;
-    }
+    } */
 }
 
 @media screen and (max-width: 540px) {
@@ -277,10 +283,10 @@
     }
 
     .header__movies {
-        padding-bottom: 24px;
+        padding-bottom: 6px;
+        margin: 0px auto 16px;
+        border-bottom: 2px solid #fff;
     }
-
-    .header__profile-burger {}
 
 }
 
