@@ -1,128 +1,60 @@
-function MovieCard() {
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
+export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDeleteMovie }) {
+
+    const { pathname } = useLocation();
+    const [addedMovie, setAddedMovie] = useState(false);
+
+    // расстановка кнопок лайков по карточкам
+    useEffect(() => {
+        console.log(savedMovies)
+        if (pathname === "/movies") {
+            setAddedMovie(savedMovies.some(item => movie.id === item.movieId))
+        }
+    }, [savedMovies, movie.id, setAddedMovie, pathname]);
+
+    function handleAddMovie() {
+        console.log(addedMovie)
+        if (savedMovies.some((element) => movie.id === element.movieId)) {
+            setAddedMovie(false);
+            checkLike(movie)
+        } else {
+            setAddedMovie(true)
+            checkLike(movie)
+        }
+        console.log(addedMovie)
+    }
+
+    function durationFilm(duration) {
+        const hours = Math.floor(duration / 60);
+        const minutes = duration % 60;
+        return (hours === 0 ? `${minutes}м` : minutes === 0 ? `${hours}ч` : `${hours}ч ${minutes}м`);
+    }
+
+    console.log(movie)
+
     return (
-        <ul className="movie__area">
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">Баския: Взрыв реальности</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-            <li className="movie__card">
-                <div className="movie__imagebox">
-                    <img className="movie__image" src={require("../../../images/movie_example_1.jpg")} alt="Фильм" />
-                    <button className="movie__added-mark" type="button"></button>
-                </div>
-                <div className="movie__infobox">
-                    <p className="movie__card-description">33 слова о дизайне</p>
-                    <div className="movie__length">1ч 17м</div>
-                </div>
-            </li>
-        </ul>
+        <li className="movie__card">
+            <div>{movie.nameRu}</div>
+            <div className="movie__imagebox">
+                <img className="movie__image" src={pathname === '/movies' ? `https://api.nomoreparties.co${movie.image.url}` : `${movie.image}`} alt={movie.nameRU} />
+
+                {pathname === "/movies" ?
+                    <button className={`movie__button ${addedMovie ? "movie__added-mark" : "movie__save-mark"}`} type="button" onClick={handleAddMovie}></button>
+                    :
+                    <button className="movie__button movie__button-remove" type="button" onClick={() => handleDeleteMovie(movie._id)}></button>
+                }
+
+            </div>
+
+            <div className="movie__infobox">
+                <a href={movie.trailerLink} target="_blank" rel="noreferrer">
+                    <p className="movie__card-description">{movie.nameRU}</p>
+                </a>
+                <div className="movie__length">{durationFilm(movie.duration)}</div>
+            </div>
+        </li>
     )
 }
 
-export default MovieCard;

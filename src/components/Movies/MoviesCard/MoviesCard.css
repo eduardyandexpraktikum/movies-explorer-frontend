@@ -1,8 +1,11 @@
-/* .movie__card {} */
-
+.movie__card {
+    max-width: 360px;
+}
 
 .movie__imagebox {
+    box-sizing: content-box;
     width: 360px;
+    height: 201px;
     position: relative;
 }
 
@@ -11,15 +14,36 @@
     height: 100%;
 }
 
-.movie__added-mark {
+.movie__button {
     position: absolute;
     top: 14px;
     right: 14px;
+    background-color: transparent;
+    border: none;
+    z-index: 2;
+}
+
+.movie__added-mark {
     background-image: url(../../../images/savedmovie.svg);
     height: 21px;
     width: 21px;
-    background-color: transparent;
-    border: none;
+}
+
+.movie__save-mark {
+    height: 21px;
+    width: 72px;
+    cursor: pointer;
+}
+
+.movie__card:hover .movie__save-mark {
+    background-image: url(../../../images/savemovie.png);
+}
+
+.movie__button-remove {
+    background-image: url(../../../images/deletemovie.png);
+    height: 21px;
+    width: 21px;
+    cursor: pointer;
 }
 
 .movie__image {
@@ -42,6 +66,7 @@
     line-height: 17px;
     letter-spacing: 0px;
     text-align: left;
+    max-width: 250px;
 }
 
 .movie__length {
@@ -57,6 +82,17 @@
     letter-spacing: 0px;
     align-items: center;
     border-radius: 3px;
+}
+
+.movie__delete-mark {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-image: url(../../../images/deletemovie.png);
+    height: 21px;
+    width: 21px;
+    background-color: transparent;
+    border: none;
 }
 
 @media screen and (max-width: 800px) {

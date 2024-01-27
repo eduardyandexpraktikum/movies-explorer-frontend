@@ -1,20 +1,31 @@
 import { useState } from "react";
 
-function SearchForm() {
+function SearchForm({ handleMovies, setShortSwitch }) {
 
     const [isTumbDisabled, setIsTumbDisabled] = useState(false);
 
     function tumbSwitch() {
-        setIsTumbDisabled(!isTumbDisabled)
+        setShortSwitch(!isTumbDisabled)
     }
+
+    function handleMoviesSubmit(e) {
+        e.preventDefault();
+        handleMovies(e.target.search.value);
+    };
 
     return (
         <div className="search">
             <div className="search__box">
-                <form>
+                <form onSubmit={handleMoviesSubmit}>
                     <div className="search__input">
-                        <input className="search__input-area" placeholder="Фильм" type="text" />
-                        <button className="search__enter" type="button" />
+                        <input name='search'
+                            className="search__input-area"
+                            type="text"
+                            placeholder="Фильм"
+                            minLength="1"
+                            required
+                        />
+                        <button className="search__enter" type="submit" />
                     </div>
                     <div className="search__shorts">
                         <button className={`search__shorts-tumb ${!isTumbDisabled ? "" : "search__shorts-tumb-disabled"}`} onClick={tumbSwitch} type="button" />

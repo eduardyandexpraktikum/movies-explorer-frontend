@@ -1,0 +1,120 @@
+export const baseUrl = 'https://api.eduarddiploma.nomoredomainsmonster.ru'
+
+export function register({ name, email, password }) {
+    return fetch(`${baseUrl}/signup`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, password })
+    })
+        .then(_getResponseData)
+}
+
+export function login({ email, password }) {
+    return fetch(`${baseUrl}/signin`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    })
+        .then(_getResponseData)
+        .then((data) => {
+            localStorage.setItem('token', data.token)
+            return data;
+        })
+}
+
+export function getMe(token) {
+    return fetch(`${baseUrl}/users/me`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+        .then(_getResponseData);
+}
+
+export function patchMe({ name, about, token }) {
+    return fetch(`${baseUrl}/users/me`, {
+        method: 'PATCH',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+            about: about
+        })
+    })
+        .then(_getResponseData);
+}
+
+export const checkToken = (token) => {
+    return fetch(`${baseUrl}/users/me`, {
+        method: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    })
+        .then(_getResponseData);
+};
+
+export function getSavedMovies(token) {
+    return fetch(`${baseUrl}/movies`, {
+        method: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    })
+        .then(_getResponseData);
+}
+
+export function addMovie(data, token) {
+    return fetch(`${baseUrl}/movies`, {
+        method: "POST",
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            country: data.country,
+            director: data.director,
+            duration: data.duration,
+            year: data.year,
+            description: data.description,
+            image: `https://api.nomoreparties.co${data.image.url}`,
+            trailerLink: data.trailerLink,
+            nameRU: data.nameRU,
+            nameEN: data.nameEN,
+            thumbnail: `https://api.nomoreparties.co${data.image.formats.thumbnail.url}`,
+            movieId: data.id,
+        })
+    }).then(_getResponseData);
+}
+
+export function deleteMovie({ movieId, token }) {
+    return fetch(`${baseUrl}/movies/${movieId}`, {
+        method: "DELETE",
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        },
+    }).then(_getResponseData);
+}
+
+
+export function _getResponseData(res) {
+    if (!res.ok) {
+        return Promise.reject(`Ошибка ${res.status}`);
+    }
+    return res.json();
+}
