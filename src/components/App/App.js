@@ -9,7 +9,6 @@ import NavTab from '../Main/NavTab/NavTab';
 import Techs from '../Main/Techs/Techs';
 import { Movies } from '../Movies/Movies'
 import { getMe, login, patchMe, register, getSavedMovies, addMovie, deleteMovie, checkToken } from '../../utils/MainApi';
-import { MoviesApi } from '../../utils/MoviesApi';
 import { Profile } from '../Profile/Profile';
 import { Register } from '../Register/Register';
 import { Error } from '../Errors/Error';
@@ -27,7 +26,6 @@ function App() {
     const [movies, setMovies] = useState([]);
     const [savedMovies, setSavedMovies] = useState([]);
     const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token'));
-    const [successReg, setSuccessReg] = useState(false);
     const [successUpdate, setSuccessUpdate] = useState(false);
 
     useEffect(() => {
@@ -48,10 +46,6 @@ function App() {
         } else {
             setLoggedIn(false);
         }
-
-        // if (!savedMovies || !savedMovies.length) {
-        //     setSavedMovies((localStorage.getItem('savedMovies') === 'undefined' || localStorage.getItem('savedMovies') === null) ? [] : JSON.parse(localStorage.getItem('savedMovies')));
-        // }
     }, [loggedIn]);
 
     function handleRegister({ name, email, password }) {
@@ -105,18 +99,13 @@ function App() {
 
     function checkLike(movie) {
         const isLiked = savedMovies.some(element => movie.id === element.movieId);
-        // console.log(savedMovies)
-        // console.log(movie.id)
-        // const clickFilm = movies.filter((element) => {
-        //     return element.movieId === movie.id
-        // })
+
 
         if (!isLiked) {
             addMovie(movie, localStorage.token)
                 .then(res => {
                     console.log(res);
                     setSavedMovies(res);
-                    // localStorage.setItem("savedMovies", JSON.stringify(savedMovies)); 
                 })
                 .catch((err) => { console.log(`Ошибка ${err}`) });
         }

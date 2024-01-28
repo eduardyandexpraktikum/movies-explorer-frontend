@@ -4,7 +4,6 @@ export function register({ name, email, password }) {
     return fetch(`${baseUrl}/signup`, {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ name, email, password })
@@ -16,7 +15,6 @@ export function login({ email, password }) {
     return fetch(`${baseUrl}/signin`, {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email, password })
@@ -43,8 +41,8 @@ export function patchMe({ name, about, token }) {
     return fetch(`${baseUrl}/users/me`, {
         method: 'PATCH',
         headers: {
-            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
             name: name,
@@ -58,7 +56,6 @@ export const checkToken = (token) => {
     return fetch(`${baseUrl}/users/me`, {
         method: "GET",
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
         },
@@ -70,7 +67,6 @@ export function getSavedMovies(token) {
     return fetch(`${baseUrl}/movies`, {
         method: "GET",
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
         },
@@ -82,8 +78,8 @@ export function addMovie(data, token) {
     return fetch(`${baseUrl}/movies`, {
         method: "POST",
         headers: {
-            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
             country: data.country,
@@ -105,8 +101,8 @@ export function deleteMovie({ movieId, token }) {
     return fetch(`${baseUrl}/movies/${movieId}`, {
         method: "DELETE",
         headers: {
-            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
     }).then(_getResponseData);
 }

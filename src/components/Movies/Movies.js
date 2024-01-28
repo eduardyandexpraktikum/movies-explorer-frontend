@@ -11,7 +11,7 @@ import { SavedMovieCardList } from '../SavedMovies/SavedMoviesCardList/SavedMovi
 export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) {
 
     const [moviesList, setMoviesList] = useState([]); //все фильмы с nomoreparties
-    const [searchInput, setSearchInput] = useState(''); // стока поиска
+    const [searchInput, setSearchInput] = useState(''); // строка поиска
     const [shortSwitch, setShortSwitch] = useState(false); //переключатель короткометражек
     const [loading, setLoading] = useState(false); //прелоадер вкл/выкл
     const [filteredMovies, setFilteredMovies] = useState([]) //массив отфильтованых фильмов

@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
-import { CurrentUserContext } from "../../utils/CurrentUserContext";
 // import { useContext } from "react";
 
 export function Profile({ loggedIn, handleLogout, handlePatchMe, currentUser }) {
 
     console.log(currentUser);
-    console.log(CurrentUserContext);
 
     function handleSubmitPatch(e) {
         e.preventDefault();
         handlePatchMe({
-
-        })
+            name: currentUser.name,
+            email: currentUser.email
+        });
     }
 
     return (

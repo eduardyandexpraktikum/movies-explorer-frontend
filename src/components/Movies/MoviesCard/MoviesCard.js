@@ -6,7 +6,6 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
     const { pathname } = useLocation();
     const [addedMovie, setAddedMovie] = useState(false);
 
-    // расстановка кнопок лайков по карточкам
     useEffect(() => {
         console.log(savedMovies)
         if (pathname === "/movies") {
@@ -23,7 +22,6 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
             setAddedMovie(true)
             checkLike(movie)
         }
-        console.log(addedMovie)
     }
 
     function durationFilm(duration) {
@@ -39,15 +37,12 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
             <div>{movie.nameRu}</div>
             <div className="movie__imagebox">
                 <img className="movie__image" src={pathname === '/movies' ? `https://api.nomoreparties.co${movie.image.url}` : `${movie.image}`} alt={movie.nameRU} />
-
                 {pathname === "/movies" ?
                     <button className={`movie__button ${addedMovie ? "movie__added-mark" : "movie__save-mark"}`} type="button" onClick={handleAddMovie}></button>
                     :
                     <button className="movie__button movie__button-remove" type="button" onClick={() => handleDeleteMovie(movie._id)}></button>
                 }
-
             </div>
-
             <div className="movie__infobox">
                 <a href={movie.trailerLink} target="_blank" rel="noreferrer">
                     <p className="movie__card-description">{movie.nameRU}</p>
