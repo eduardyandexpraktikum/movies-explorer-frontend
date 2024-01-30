@@ -10,7 +10,6 @@ function Header({ loggedIn }) {
         document.body.classList.toggle('fix-scroll')
     }
 
-
     const { pathname } = useLocation();
 
     return (

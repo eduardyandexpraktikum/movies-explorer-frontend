@@ -75,6 +75,7 @@ function App() {
 
     function handleLogout() {
         localStorage.clear();
+        setLoggedIn(false);
         navigate('/', { replace: true })
     }
 
@@ -200,7 +201,7 @@ function App() {
                     </>
                     }
                 />
-                {/* <Route
+                <Route
                     path={'/signin'}
                     element={<>
                         <main >
@@ -208,11 +209,12 @@ function App() {
                         </main>
                     </>
                     }
-                /> */}
+                />
                 <Route path="*" element={<Error />} />
 
                 <Route path="/" element={loggedIn ? <Navigate to="/movies" /> : <Login />} />
                 <Route path='/signin' element={loggedIn ? <Navigate to="/movies" /> : <Login onSubmit={handleLogin} />} />
+
 
             </Routes>
         </>
