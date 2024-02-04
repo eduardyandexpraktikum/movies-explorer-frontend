@@ -33,8 +33,6 @@ function App() {
         if (token) {
             Promise.all([getMe(token), getSavedMovies(token)])
                 .then(([userData, userSavedMovies]) => {
-                    console.log('фильмы с сервера');
-                    console.log(userSavedMovies);
                     setCurrentUser(userData);
                     setSavedMovies(userSavedMovies);
                     setLoggedIn(true);
@@ -131,9 +129,6 @@ function App() {
         }
     }
 
-
-    console.log(loggedIn)
-
     return (
         <>
             <CurrentUserContext.Provider value={currentUser} />
@@ -202,20 +197,19 @@ function App() {
                     }
                 />
                 <Route
-                    path={'/signin'}
-                    element={<>
-                        <main >
-                            <Login onSubmit={handleLogin} />
-                        </main>
-                    </>
+                    path='/signin'
+                    element={
+                        loggedIn
+                            ? <Navigate to="/movies" />
+                            : <main >
+                                <Login onSubmit={handleLogin} />
+                            </main>
                     }
                 />
+
                 <Route path="*" element={<Error />} />
 
                 <Route path="/" element={loggedIn ? <Navigate to="/movies" /> : <Login />} />
-                <Route path='/signin' element={loggedIn ? <Navigate to="/movies" /> : <Login onSubmit={handleLogin} />} />
-
-
             </Routes>
         </>
     );

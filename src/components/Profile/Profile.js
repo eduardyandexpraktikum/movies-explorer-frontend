@@ -36,7 +36,7 @@ export function Profile({ loggedIn, handleLogout, handlePatchMe, currentUser }) 
                     <div className="profile__links">
                         <p className="profile__edit">Редактировать</p>
 
-                        <Link to={'/signin'} className="profile__exit" onClick={handleLogout}>Выйти из аккаунта</Link>
+                        <Link to={'/'} className="profile__exit" onClick={handleLogout}>Выйти из аккаунта</Link>
                     </div>
                 </section >
             </main>

@@ -7,7 +7,6 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
     const [addedMovie, setAddedMovie] = useState(false);
 
     useEffect(() => {
-        console.log(savedMovies)
         if (pathname === "/movies") {
             setAddedMovie(savedMovies.some(item => movie.id === item.movieId))
         }
@@ -29,8 +28,6 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
         const minutes = duration % 60;
         return (hours === 0 ? `${minutes}м` : minutes === 0 ? `${hours}ч` : `${hours}ч ${minutes}м`);
     }
-
-    console.log(movie)
 
     return (
         <li className="movie__card">

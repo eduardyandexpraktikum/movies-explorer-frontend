@@ -60,6 +60,10 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) 
         }
     };
 
+    function handleChange(e) {
+        setSearchInput(e.target.value);
+    }
+
 
     return (
         <>
@@ -68,6 +72,8 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) 
                 <SearchForm
                     handleMovies={handleMovies}
                     setShortSwitch={setShortSwitch}
+                    searchInput={searchInput}
+                    handleChange={handleChange}
                 />
                 {pathname === '/movies' ?
                     <MoviesCardList

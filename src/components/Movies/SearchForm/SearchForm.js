@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function SearchForm({ handleMovies, setShortSwitch }) {
+function SearchForm({ handleMovies, setShortSwitch, searchInput, handleChange }) {
 
     const [isTumbDisabled, setIsTumbDisabled] = useState(false);
 
+    useEffect(() => {
+
+    }, [isTumbDisabled])
+
     function tumbSwitch() {
         setShortSwitch(!isTumbDisabled)
+        setIsTumbDisabled(!isTumbDisabled);
     }
+
+    console.log(isTumbDisabled);
 
     function handleMoviesSubmit(e) {
         e.preventDefault();
@@ -23,6 +30,8 @@ function SearchForm({ handleMovies, setShortSwitch }) {
                             type="text"
                             placeholder="Фильм"
                             minLength="1"
+                            value={searchInput}
+                            onChange={handleChange}
                             required
                         />
                         <button className="search__enter" type="submit" />
