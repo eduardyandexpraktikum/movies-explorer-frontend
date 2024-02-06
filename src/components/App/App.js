@@ -74,6 +74,8 @@ function App() {
     function handleLogout() {
         localStorage.clear();
         setLoggedIn(false);
+        setCurrentUser({});
+        setSavedMovies([]);
         navigate('/', { replace: true })
     }
 
@@ -133,21 +135,21 @@ function App() {
         <>
             <CurrentUserContext.Provider value={currentUser} />
             <Routes>
-
                 <Route
-                    path={'/'}
+                    path="/"
                     element={
-                        <>
-                            <Header loggedIn={loggedIn} />
-                            <main>
-                                <NavTab />
-                                <AboutProject />
-                                <Techs />
-                                <AboutMe />
-                            </main >
-                            <Footer />
-                        </>
-                    }
+                        loggedIn
+                            ? <Navigate to="/movies" />
+                            : <>
+                                <Header loggedIn={loggedIn} />
+                                <main>
+                                    <NavTab />
+                                    <AboutProject />
+                                    <Techs />
+                                    <AboutMe />
+                                </main >
+                                <Footer />
+                            </>}
                 />
                 <Route
                     path={'/movies'}
@@ -209,7 +211,7 @@ function App() {
 
                 <Route path="*" element={<Error />} />
 
-                <Route path="/" element={loggedIn ? <Navigate to="/movies" /> : <Login />} />
+
             </Routes>
         </>
     );

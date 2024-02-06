@@ -39,7 +39,7 @@
 }
 
 .search__shorts-tumb {
-    background-image: url(../../../images/smalltumb.png);
+    background-image: url(../../../images/smalltumboff.png);
     width: 36px;
     border: none;
     background-color: transparent;
@@ -47,8 +47,8 @@
     background-repeat: no-repeat;
 }
 
-.search__shorts-tumb-disabled {
-    background-image: url(../../../images/smalltumboff.png);
+.search__shorts-tumb-enabled {
+    background-image: url(../../../images/smalltumb.png);
 }
 
 .search__shorts-description {

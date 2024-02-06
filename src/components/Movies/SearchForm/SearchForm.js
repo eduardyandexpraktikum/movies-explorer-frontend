@@ -1,29 +1,26 @@
 import { useState, useEffect } from "react";
 
-function SearchForm({ handleMovies, setShortSwitch, searchInput, handleChange }) {
+function SearchForm({ handleSearchMovies, setShortSwitch, searchInput, handleSearchChange, shortSwitch, handleShortSwitch }) {
 
-    const [isTumbDisabled, setIsTumbDisabled] = useState(false);
 
-    useEffect(() => {
-
-    }, [isTumbDisabled])
-
-    function tumbSwitch() {
-        setShortSwitch(!isTumbDisabled)
-        setIsTumbDisabled(!isTumbDisabled);
+    function shortSwitchToggle() {
+        console.log("before searchform")
+        console.log(shortSwitch)
+        handleShortSwitch();
+        console.log("after searchform")
+        console.log(shortSwitch)
     }
 
-    console.log(isTumbDisabled);
 
-    function handleMoviesSubmit(e) {
+    function handleMoviesSearchSubmit(e) {
         e.preventDefault();
-        handleMovies(e.target.search.value);
+        handleSearchMovies(e.target.search.value);
     };
 
     return (
         <div className="search">
             <div className="search__box">
-                <form onSubmit={handleMoviesSubmit}>
+                <form onSubmit={handleMoviesSearchSubmit}>
                     <div className="search__input">
                         <input name='search'
                             className="search__input-area"
@@ -31,13 +28,13 @@ function SearchForm({ handleMovies, setShortSwitch, searchInput, handleChange })
                             placeholder="Фильм"
                             minLength="1"
                             value={searchInput}
-                            onChange={handleChange}
+                            onChange={handleSearchChange}
                             required
                         />
                         <button className="search__enter" type="submit" />
                     </div>
                     <div className="search__shorts">
-                        <button className={`search__shorts-tumb ${!isTumbDisabled ? "" : "search__shorts-tumb-disabled"}`} onClick={tumbSwitch} type="button" />
+                        <button className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`} onClick={shortSwitchToggle} type="button" />
                         <p className="search__shorts-description">Короткометражки</p>
                     </div>
                 </form>

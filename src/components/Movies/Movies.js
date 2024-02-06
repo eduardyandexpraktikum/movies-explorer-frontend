@@ -42,13 +42,13 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) 
         }
     }, [movieSearch, shortSwitch]);
 
-    function handleMovies(search) {
+    function handleSearchMovies(search) {
         if (!moviesList.length) {
             setLoading(true);
             MoviesApi.getMovies()
                 .then((res) => {
                     setMoviesList(res);
-                    setShortSwitch(false);
+                    // setShortSwitch(false);
                     movieSearch(search, shortSwitch, res)
                 })
                 .catch((err) => {
@@ -60,7 +60,13 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) 
         }
     };
 
-    function handleChange(e) {
+    function handleShortSwitch() {
+        localStorage.setItem("shorts", JSON.stringify(!shortSwitch));
+        setShortSwitch(!shortSwitch)
+    };
+
+
+    function handleSearchChange(e) {
         setSearchInput(e.target.value);
     }
 
@@ -70,10 +76,12 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) 
             <Header loggedIn={loggedIn} />
             <main>
                 <SearchForm
-                    handleMovies={handleMovies}
+                    handleSearchMovies={handleSearchMovies}
                     setShortSwitch={setShortSwitch}
                     searchInput={searchInput}
-                    handleChange={handleChange}
+                    handleSearchChange={handleSearchChange}
+                    shortSwitch={shortSwitch}
+                    handleShortSwitch={handleShortSwitch}
                 />
                 {pathname === '/movies' ?
                     <MoviesCardList
