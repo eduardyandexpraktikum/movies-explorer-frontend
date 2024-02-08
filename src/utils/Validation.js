@@ -46,9 +46,7 @@ export function useFormValidation() {
             setValues(newValues);
             setErrors(newErrors);
             setIsValid(newIsValid);
-        },
-        [setValues, setErrors, setIsValid]
-    );
+        }, [setValues, setErrors, setIsValid]);
 
     return { values, setValues, handleChange, errors, isValid, formReset };
 }

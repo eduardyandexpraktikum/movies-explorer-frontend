@@ -1,13 +1,8 @@
 import React from 'react';
 import '../App/App.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import { Login } from '../Login/Login';
-import AboutMe from '../Main/AboutMe/AboutMe';
-import AboutProject from '../Main/AboutProject/AboutProject';
-import NavTab from '../Main/NavTab/NavTab';
-import Techs from '../Main/Techs/Techs';
-import { Movies } from '../Movies/Movies'
+import { Main } from '../Main/Main';
+import { Movies } from '../Movies/Movies';
 import { getMe, login, patchMe, register, getSavedMovies, addMovie, deleteMovie, checkToken } from '../../utils/MainApi';
 import { Profile } from '../Profile/Profile';
 import { Register } from '../Register/Register';
@@ -140,16 +135,9 @@ function App() {
                     element={
                         loggedIn
                             ? <Navigate to="/movies" />
-                            : <>
-                                <Header loggedIn={loggedIn} />
-                                <main>
-                                    <NavTab />
-                                    <AboutProject />
-                                    <Techs />
-                                    <AboutMe />
-                                </main >
-                                <Footer />
-                            </>}
+                            : <Main loggedIn={loggedIn} />
+                        // возможно нужно сразу на мэйн
+                    }
                 />
                 <Route
                     path={'/movies'}
@@ -191,11 +179,12 @@ function App() {
                 />
                 <Route
                     path={'/signup'}
-                    element={<>
-                        <main >
-                            <Register onSubmit={handleRegister} />
-                        </main>
-                    </>
+                    element={
+                        loggedIn
+                            ? <Navigate to="/movies" />
+                            : <main >
+                                <Register onSubmit={handleRegister} />
+                            </main>
                     }
                 />
                 <Route
