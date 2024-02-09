@@ -9,7 +9,6 @@ import { Register } from '../Register/Register';
 import { Error } from '../Errors/Error';
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import { ProtectedRoute } from '../ProtectedRoute/ProtectedRoute';
-import './App.css';
 import { CurrentUserContext } from '../../utils/CurrentUserContext';
 import { useState, useEffect } from 'react';
 
@@ -136,7 +135,7 @@ function App() {
                         loggedIn
                             ? <Navigate to="/movies" />
                             : <Main loggedIn={loggedIn} />
-                        // возможно нужно сразу на мэйн
+                        // возможно нужно сразу на мэйн без условия
                     }
                 />
                 <Route

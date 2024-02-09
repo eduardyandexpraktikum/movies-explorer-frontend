@@ -20,7 +20,7 @@ export function Profile({ loggedIn, handleLogout, handlePatchMe, currentUser }) 
             <main>
                 <section className="profile">
                     <h1 className="profile__header">Привет, {currentUser.name}</h1>
-                    <form onClick={handleSubmitPatch}>
+                    <form onClick={handleSubmitPatch} noValidate>
                         <div className="profile__fields">
                             <div className="profile__field">
                                 <p className="profile__label">Имя</p>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useFormValidation } from "../../utils/Validation";
+
 
 export function Register({ onSubmit }) {
 
@@ -27,14 +29,16 @@ export function Register({ onSubmit }) {
             <Link to={'/'}><div className="registration__logo" /></Link>
             <div className="registration__mobilearea">
                 <h1 className="registration__header">Добро пожаловать!</h1>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} noValidate>
                     <p className="registration__label">Имя</p>
                     <input className="registration__field" value={formValue.name} name="name" type="text" onChange={handleChange} />
+                    <span className="registration__error-label">Что-то пошло не так...</span>
                     <p className="registration__label">E-mail</p>
                     <input className="registration__field" value={formValue.email} name="email" type="email" onChange={handleChange} />
+                    <span className="registration__error-label">Что-то пошло не так...</span>
                     <p className="registration__label">Пароль</p>
                     <input className="registration__field" value={formValue.password} name="password" type="password" onChange={handleChange} />
-                    <p className="registration__error-label">Что-то пошло не так...</p>
+                    <span className="registration__error-label">Что-то пошло не так...</span>
                     <button className="registration__submit" type="submit">Зарегистрироваться</button>
                 </form>
                 <p className="registration__to-login">Уже зарегистрированы? <Link to={'/signin'} className={'registration__to-login-link'}>Войти</Link></p>

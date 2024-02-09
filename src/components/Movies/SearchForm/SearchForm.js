@@ -1,16 +1,4 @@
-import { useState, useEffect } from "react";
-
 function SearchForm({ handleSearchMovies, setShortSwitch, searchInput, handleSearchChange, shortSwitch, handleShortSwitch }) {
-
-
-    function shortSwitchToggle() {
-        console.log("before searchform")
-        console.log(shortSwitch)
-        handleShortSwitch();
-        console.log("after searchform")
-        console.log(shortSwitch)
-    }
-
 
     function handleMoviesSearchSubmit(e) {
         e.preventDefault();
@@ -34,7 +22,7 @@ function SearchForm({ handleSearchMovies, setShortSwitch, searchInput, handleSea
                         <button className="search__enter" type="submit" />
                     </div>
                     <div className="search__shorts">
-                        <button className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`} onClick={shortSwitchToggle} type="button" />
+                        <button className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`} onClick={handleShortSwitch} type="button" />
                         <p className="search__shorts-description">Короткометражки</p>
                     </div>
                 </form>

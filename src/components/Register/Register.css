@@ -20,7 +20,7 @@
 }
 
 .registration__label {
-    margin: 20px 0px 8px;
+    margin: 0px 0px 9px;
     font-size: 10px;
     font-weight: 400;
     line-height: 12px;
@@ -39,6 +39,7 @@
 }
 
 .registration__error-label {
+    display: inline-block;
     margin: 10px 0px 0px;
     font-size: 10px;
     font-weight: 400;
@@ -59,7 +60,7 @@
     top: 552px;
     left: 442px;
     border-radius: 3px;
-    margin: 69px auto 2px;
+    margin: 73px auto 2px;
     border: none;
     color: #fff;
     background-color: #4285F4;
@@ -75,7 +76,7 @@
 }
 
 .registration__to-login-link {
-    margin-left: 6px;
+    margin-left: 3px;
     color: #4285F4;
     text-decoration: none;
 }
