@@ -12,18 +12,22 @@ export function register({ name, email, password }) {
 }
 
 export function login({ email, password }) {
+    console.log(email, password)
     return fetch(`${baseUrl}/signin`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({
+            email: email,
+            password: password
+        })
     })
         .then(_getResponseData)
-        .then((data) => {
-            localStorage.setItem('token', data.token)
-            return data;
-        })
+    // .then((data) => {
+    //     localStorage.setItem('token', data.token)
+    //     return data;
+    // })
 }
 
 export function getMe(token) {
@@ -37,7 +41,10 @@ export function getMe(token) {
         .then(_getResponseData);
 }
 
-export function patchMe({ name, about, token }) {
+export function patchMe(name, email, token) {
+    console.log(name)
+    console.log(email)
+    console.log(token)
     return fetch(`${baseUrl}/users/me`, {
         method: 'PATCH',
         headers: {
@@ -46,7 +53,7 @@ export function patchMe({ name, about, token }) {
         },
         body: JSON.stringify({
             name: name,
-            about: about
+            email: email
         })
     })
         .then(_getResponseData);
@@ -98,6 +105,7 @@ export function addMovie(data, token) {
 }
 
 export function deleteMovie({ movieId, token }) {
+    console.log(movieId)
     return fetch(`${baseUrl}/movies/${movieId}`, {
         method: "DELETE",
         headers: {

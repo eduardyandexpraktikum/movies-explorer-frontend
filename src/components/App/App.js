@@ -19,7 +19,7 @@ function App() {
     const [currentUser, setCurrentUser] = useState({});
     const [movies, setMovies] = useState([]);
     const [savedMovies, setSavedMovies] = useState([]);
-    const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token'));
+    const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token') ? true : false);
     const [successUpdate, setSuccessUpdate] = useState(false);
 
     useEffect(() => {
@@ -41,6 +41,7 @@ function App() {
     }, [loggedIn]);
 
     function handleRegister({ name, email, password }) {
+        console.log(name, email, password)
         register({ name, email, password })
             .then((res) => {
                 if (res) {
@@ -56,6 +57,7 @@ function App() {
     function handleLogin(data) {
         login(data)
             .then((res) => {
+                console.log(res)
                 localStorage.setItem('token', res.token);
                 setLoggedIn(true);
                 navigate('/movies', { replace: true });
@@ -74,10 +76,12 @@ function App() {
     }
 
     function handlePatchMe(data) {
-        patchMe(data, localStorage.token)
+        const token = localStorage.getItem('token');
+        console.log(data, token)
+        patchMe(data.name, data.email, token)
             .then((res) => {
                 setCurrentUser(res);
-                setSuccessUpdate(true)
+                setSuccessUpdate(true);
             })
             .catch((err) => {
                 console.log(`Ошибка: ${err}`)
@@ -85,7 +89,8 @@ function App() {
     }
 
     function handleDeleteMovie(movieId) {
-        deleteMovie(movieId, localStorage.token)
+        const token = localStorage.getItem('token');
+        deleteMovie({ movieId, token })
             .then(() => {
                 setSavedMovies(savedMovies.filter((movie) => { return movie._id !== movieId }));
             })
@@ -99,8 +104,7 @@ function App() {
         if (!isLiked) {
             addMovie(movie, localStorage.token)
                 .then(res => {
-                    console.log(res);
-                    setSavedMovies(res);
+                    setSavedMovies([...savedMovies, res]);
                 })
                 .catch((err) => { console.log(`Ошибка ${err}`) });
         }
@@ -120,7 +124,10 @@ function App() {
                         setLoggedIn(true);
                     }
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => {
+                    setLoggedIn(false);
+                });
+        } else {
             setLoggedIn(false);
         }
     }
@@ -148,6 +155,7 @@ function App() {
                             savedMovies={savedMovies}
                             checkLike={checkLike}
                             handleDeleteMovie={handleDeleteMovie}
+                            openSavedMovies={false}
                         />
                     }
                 />
@@ -161,6 +169,7 @@ function App() {
                             savedMovies={savedMovies}
                             checkLike={checkLike}
                             handleDeleteMovie={handleDeleteMovie}
+                            openSavedMovies={true}
                         />
                     }
                 />

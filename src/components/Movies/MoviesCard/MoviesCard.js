@@ -8,7 +8,9 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
 
     useEffect(() => {
         if (pathname === "/movies") {
-            setAddedMovie(savedMovies.some(item => movie.id === item.movieId))
+            if (savedMovies) {
+                setAddedMovie(savedMovies.some((item) => movie.id === item.movieId))
+            }
         }
     }, [savedMovies, movie.id, setAddedMovie, pathname]);
 

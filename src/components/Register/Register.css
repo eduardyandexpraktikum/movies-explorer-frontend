@@ -40,6 +40,7 @@
 
 .registration__error-label {
     display: inline-block;
+    min-height: 1em;
     margin: 10px 0px 0px;
     font-size: 10px;
     font-weight: 400;
@@ -64,6 +65,11 @@
     border: none;
     color: #fff;
     background-color: #4285F4;
+}
+
+.registration__submit:disabled {
+    opacity: .3;
+    background-color: #8B8B8B;
 }
 
 .registration__to-login {

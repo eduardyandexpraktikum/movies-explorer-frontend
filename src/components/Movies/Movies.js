@@ -8,7 +8,7 @@ import { MoviesApi } from '../../utils/MoviesApi';
 import { useLocation } from 'react-router-dom';
 import { SavedMovieCardList } from '../SavedMovies/SavedMoviesCardList/SavedMoviesCardList';
 
-export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) {
+export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, openSavedMovies }) {
 
     const [moviesList, setMoviesList] = useState([]); //все фильмы с nomoreparties
     const [searchInput, setSearchInput] = useState(''); // строка поиска
@@ -83,7 +83,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies }) 
                     shortSwitch={shortSwitch}
                     handleShortSwitch={handleShortSwitch}
                 />
-                {pathname === '/movies' ?
+                {!openSavedMovies ?
                     <MoviesCardList
                         loading={loading}
                         moviesList={moviesList}

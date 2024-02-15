@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 
 const regExEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 const regExName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u;
-const regExPassword = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
+// const regExPassword = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
 
 export function useFormValidation() {
     const [values, setValues] = useState({});
@@ -26,13 +26,13 @@ export function useFormValidation() {
             }
         }
 
-        if (name === 'password') {
-            if (!regExPassword.test(value)) {
-                setErrors({ ...errors, [name]: 'Некорректный пароль' });
-            } else {
-                setErrors({ ...errors, [name]: '' });
-            }
-        }
+        // if (name === 'password') {
+        //     if (!regExPassword.test(value)) {
+        //         setErrors({ ...errors, [name]: 'Некорректный пароль' });
+        //     } else {
+        //         setErrors({ ...errors, [name]: '' });
+        //     }
+        // }
 
         if (name === 'email') {
             if (!regExEmail.test(value)) {
