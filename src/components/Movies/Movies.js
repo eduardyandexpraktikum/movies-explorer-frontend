@@ -13,9 +13,11 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
 
     const [moviesList, setMoviesList] = useState([]); //все фильмы с nomoreparties
     const [searchInput, setSearchInput] = useState(''); // строка поиска
+    const [searchSavedInput, setSearchSavedInput] = useState(''); //строка поиска по сохранёнкам
     const [shortSwitch, setShortSwitch] = useState(false); //переключатель короткометражек
     const [loading, setLoading] = useState(false); //прелоадер вкл/выкл
-    const [filteredMovies, setFilteredMovies] = useState([]) //массив отфильтованых фильмов
+    const [filteredMovies, setFilteredMovies] = useState([]); //массив отфильтованых фильмов
+    const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
     // const { pathname } = useLocation();
 
     const movieSearch = useCallback((search, shortSwitch, movies) => {
@@ -24,6 +26,16 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         localStorage.setItem("shorts", JSON.stringify(shortSwitch));
         localStorage.setItem("movies", JSON.stringify(movies));
         setFilteredMovies(movies.filter((movie) => {
+            const searchText = movie.nameRU.toLowerCase().includes(search.toLowerCase());
+            return (
+                shortSwitch ? (searchText && movie.duration <= SHORTMOVIE) : searchText
+            )
+        }));
+    }, []);
+
+    const savedMovieSearch = useCallback((search, shortSwitch, savedMovies) => {
+        setSearchSavedInput(search)
+        setFilteredSavedMovies(savedMovies.filter((movie) => {
             const searchText = movie.nameRU.toLowerCase().includes(search.toLowerCase());
             return (
                 shortSwitch ? (searchText && movie.duration <= SHORTMOVIE) : searchText
@@ -43,6 +55,10 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         }
     }, [movieSearch, shortSwitch]);
 
+    useEffect(() => {
+        setFilteredSavedMovies(savedMovies);
+    }, [savedMovies]);
+
     function handleSearchMovies(search) {
         if (!moviesList.length) {
             setLoading(true);
@@ -61,7 +77,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
     };
 
     function handleSearchSavedMovies(search) {
-
+        savedMovieSearch(search, shortSwitch, savedMovies);
     }
 
     function handleShortSwitch() {
@@ -74,6 +90,10 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         setSearchInput(e.target.value);
     }
 
+    function handleSavedSearchChange(e) {
+        setSearchSavedInput(e.target.value);
+    }
+
 
     return (
         <>
@@ -81,9 +101,11 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
             <main>
                 <SearchForm
                     handleSearchMovies={handleSearchMovies}
-                    setShortSwitch={setShortSwitch}
+                    handleSearchSavedMovies={handleSearchSavedMovies}
                     searchInput={searchInput}
+                    searchSavedInput={searchSavedInput}
                     handleSearchChange={handleSearchChange}
+                    handleSavedSearchChange={handleSavedSearchChange}
                     shortSwitch={shortSwitch}
                     handleShortSwitch={handleShortSwitch}
                 />
@@ -101,7 +123,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
                     <SavedMovieCardList
                         loading={loading}
                         moviesList={moviesList}
-                        filteredMovies={filteredMovies}
+                        filteredSavedMovies={filteredSavedMovies}
                         checkLike={checkLike}
                         searchInput={searchInput}
                         savedMovies={savedMovies}
