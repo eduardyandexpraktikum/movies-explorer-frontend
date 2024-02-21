@@ -5,8 +5,9 @@ import MoviesCardList from './MoviesCardList/MoviesCardList'
 import SearchForm from './SearchForm/SearchForm';
 import { useState, useCallback, useEffect } from 'react';
 import { MoviesApi } from '../../utils/MoviesApi';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { SavedMovieCardList } from '../SavedMovies/SavedMoviesCardList/SavedMoviesCardList';
+import { SHORTMOVIE } from '../../utils/Constants';
 
 export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, openSavedMovies }) {
 
@@ -15,7 +16,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
     const [shortSwitch, setShortSwitch] = useState(false); //переключатель короткометражек
     const [loading, setLoading] = useState(false); //прелоадер вкл/выкл
     const [filteredMovies, setFilteredMovies] = useState([]) //массив отфильтованых фильмов
-    const { pathname } = useLocation();
+    // const { pathname } = useLocation();
 
     const movieSearch = useCallback((search, shortSwitch, movies) => {
         setSearchInput(search);
@@ -25,7 +26,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         setFilteredMovies(movies.filter((movie) => {
             const searchText = movie.nameRU.toLowerCase().includes(search.toLowerCase());
             return (
-                shortSwitch ? (searchText && movie.duration <= 40) : searchText
+                shortSwitch ? (searchText && movie.duration <= SHORTMOVIE) : searchText
             )
         }));
     }, []);
@@ -48,7 +49,6 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
             MoviesApi.getMovies()
                 .then((res) => {
                     setMoviesList(res);
-                    // setShortSwitch(false);
                     movieSearch(search, shortSwitch, res)
                 })
                 .catch((err) => {

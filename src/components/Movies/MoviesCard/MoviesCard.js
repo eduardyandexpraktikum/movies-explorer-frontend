@@ -15,7 +15,6 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
     }, [savedMovies, movie.id, setAddedMovie, pathname]);
 
     function handleAddMovie() {
-        console.log(addedMovie)
         if (savedMovies.some((element) => movie.id === element.movieId)) {
             setAddedMovie(false);
             checkLike(movie)

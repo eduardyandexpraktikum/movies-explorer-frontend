@@ -57,7 +57,6 @@ function App() {
     function handleLogin(data) {
         login(data)
             .then((res) => {
-                console.log(res)
                 localStorage.setItem('token', res.token);
                 setLoggedIn(true);
                 navigate('/movies', { replace: true });
@@ -205,10 +204,7 @@ function App() {
                             </main>
                     }
                 />
-
                 <Route path="*" element={<Error />} />
-
-
             </Routes>
         </>
     );

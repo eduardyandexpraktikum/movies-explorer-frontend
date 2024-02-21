@@ -40,7 +40,7 @@
     .movie__area {
         margin-top: 0px;
         row-gap: 44px;
-        justify-content: start;
+        justify-content: center;
     }
 
     .movie__more {

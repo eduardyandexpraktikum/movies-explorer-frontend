@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Preloader from "../Preloader/Preloader";
 import { MoviesLayout } from "../../../utils/MoviesLayout";
 import { useLocation } from "react-router-dom";
+import { DESKTOP_LAYOUT_WIDTH, TABLET_LAYOUT_WIDTH, MOBILE_LAYOUT_WIDTH } from "../../../utils/Constants";
 
 function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchInput, savedMovies, handleDeleteMovie }) {
 
@@ -16,13 +17,13 @@ function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchI
 
             function handleMoviesLayout() {
 
-                if (window.innerWidth < 1280 || window.innerWidth >= 1280) {
+                if (window.innerWidth < DESKTOP_LAYOUT_WIDTH) {
                     setWidthScreen(MoviesLayout().cards)
                 }
-                if (window.innerWidth < 800) {
+                if (window.innerWidth < TABLET_LAYOUT_WIDTH) {
                     setWidthScreen(MoviesLayout().cards)
                 }
-                if (window.innerWidth < 480) {
+                if (window.innerWidth < MOBILE_LAYOUT_WIDTH) {
                     setWidthScreen(MoviesLayout().cards)
                 }
             }
