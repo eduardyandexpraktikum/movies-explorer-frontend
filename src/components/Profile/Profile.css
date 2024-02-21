@@ -75,6 +75,10 @@
     cursor: pointer;
 }
 
+.profile__edit:disabled {
+    color: #424242;
+}
+
 .profile__exit {
     display: flex;
     color: #EE3465;

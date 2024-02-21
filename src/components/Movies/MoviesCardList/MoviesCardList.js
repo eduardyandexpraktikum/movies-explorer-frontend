@@ -57,7 +57,7 @@ function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchI
                         })
                 }
             </ul>
-            <button className={`movie__more ${widthScreen >= filteredMovies.length && "movie__more_disabled"}`} type="button" onClick={handleButtonMore}>Еще</button>
+            <button className={`movie__more ${(widthScreen >= filteredMovies.length || filteredMovies.length === 0) && "movie__more_disabled"}`} type="button" onClick={handleButtonMore}>Еще</button>
         </div>
     )
 }

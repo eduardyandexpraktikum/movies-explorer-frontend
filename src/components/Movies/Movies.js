@@ -60,6 +60,10 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         }
     };
 
+    function handleSearchSavedMovies(search) {
+
+    }
+
     function handleShortSwitch() {
         localStorage.setItem("shorts", JSON.stringify(!shortSwitch));
         setShortSwitch(!shortSwitch)
