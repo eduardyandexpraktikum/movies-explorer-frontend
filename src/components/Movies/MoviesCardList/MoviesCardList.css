@@ -13,6 +13,10 @@
     list-style-type: none;
 }
 
+.movie__search-result {
+    color: #fff;
+}
+
 .movie__more {
     width: 320px;
     height: 36px;
@@ -30,6 +34,10 @@
     align-items: center;
     border-radius: 6px;
     cursor: pointer;
+}
+
+.movie__more_disabled {
+    display: none;
 }
 
 @media screen and (max-width: 850px) {

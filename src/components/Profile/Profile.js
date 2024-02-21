@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useFormValidation } from "../../utils/Validation";
 
 export function Profile({ loggedIn, handleLogout, handlePatchMe, currentUser }) {
 
-    const { values, setValues, handleChange, errors, isValid, formReset } = useFormValidation();
+    const { values, handleChange, formReset } = useFormValidation();
 
     useEffect(() => {
         formReset({

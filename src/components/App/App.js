@@ -76,7 +76,6 @@ function App() {
 
     function handlePatchMe(data) {
         const token = localStorage.getItem('token');
-        console.log(data, token)
         patchMe(data.name, data.email, token)
             .then((res) => {
                 setCurrentUser(res);

@@ -24,10 +24,6 @@ export function login({ email, password }) {
         })
     })
         .then(_getResponseData)
-    // .then((data) => {
-    //     localStorage.setItem('token', data.token)
-    //     return data;
-    // })
 }
 
 export function getMe(token) {
@@ -42,9 +38,6 @@ export function getMe(token) {
 }
 
 export function patchMe(name, email, token) {
-    console.log(name)
-    console.log(email)
-    console.log(token)
     return fetch(`${baseUrl}/users/me`, {
         method: 'PATCH',
         headers: {
