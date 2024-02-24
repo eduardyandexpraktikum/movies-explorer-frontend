@@ -179,6 +179,7 @@ function App() {
                             loggedIn={loggedIn}
                             handleLogout={handleLogout}
                             handlePatchMe={handlePatchMe}
+                            successUpdate={successUpdate}
                             currentUser={currentUser}
                         />
                     }

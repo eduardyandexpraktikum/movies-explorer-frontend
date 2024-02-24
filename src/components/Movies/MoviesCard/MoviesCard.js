@@ -34,7 +34,9 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
         <li className="movie__card">
             <div>{movie.nameRu}</div>
             <div className="movie__imagebox">
-                <img className="movie__image" src={pathname === '/movies' ? `https://api.nomoreparties.co${movie.image.url}` : `${movie.image}`} alt={movie.nameRU} />
+                <a href={movie.trailerLink} target="_blank" rel="noreferrer">
+                    <img className="movie__image" src={pathname === '/movies' ? `https://api.nomoreparties.co${movie.image.url}` : `${movie.image}`} alt={movie.nameRU} />
+                </a>
                 {pathname === "/movies" ?
                     <button className={`movie__button ${addedMovie ? "movie__added-mark" : "movie__save-mark"}`} type="button" onClick={handleAddMovie}></button>
                     :
@@ -42,9 +44,7 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
                 }
             </div>
             <div className="movie__infobox">
-                <a href={movie.trailerLink} target="_blank" rel="noreferrer">
-                    <p className="movie__card-description">{movie.nameRU}</p>
-                </a>
+                <p className="movie__card-description">{movie.nameRU}</p>
                 <div className="movie__length">{durationFilm(movie.duration)}</div>
             </div>
         </li>

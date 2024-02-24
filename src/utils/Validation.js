@@ -34,6 +34,14 @@ export function useFormValidation() {
         //     }
         // }
 
+        if (name === 'password') {
+            if (value === null || value === '') {
+                setErrors({ ...errors, [name]: 'Введите пароль' });
+            } else {
+                setErrors({ ...errors, [name]: '' });
+            }
+        }
+
         if (name === 'email') {
             if (!regExEmail.test(value)) {
                 setErrors({ ...errors, [name]: 'Некорректный email' });

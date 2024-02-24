@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import { useEffect } from "react";
 import { useFormValidation } from "../../utils/Validation";
 
-export function Profile({ loggedIn, handleLogout, handlePatchMe, currentUser }) {
+export function Profile({ loggedIn, handleLogout, handlePatchMe, successUpdate, currentUser }) {
 
     const { values, isValid, handleChange, formReset } = useFormValidation();
 
@@ -52,6 +52,7 @@ export function Profile({ loggedIn, handleLogout, handlePatchMe, currentUser }) 
                                 <input className="profile__input" name="email" value={values.email || ""} onChange={handleChange} required />
                             </div>
                         </div>
+                        <span className={``}></span>
                         <div className="profile__links">
                             <button className="profile__edit" type="submit" disabled={buttonChecker}>Редактировать</button>
 
