@@ -43,12 +43,13 @@
 @media screen and (max-width: 850px) {
     .movie {
         padding: 70px 0px 26px;
+        margin: 0px auto 0px;
     }
 
     .movie__area {
         margin-top: 0px;
-        row-gap: 44px;
         justify-content: center;
+        row-gap: 48px;
     }
 
     .movie__more {
@@ -60,7 +61,23 @@
 @media screen and (max-width: 780px) {
 
     .movie {
-        padding: 70px 30px 2px;
+        padding: 70px 0px 2px;
+    }
+
+    .movie__area {
+        column-gap: 20px;
+        row-gap: 44px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+
+    .movie {
+        padding: 70px 20px 2px;
+    }
+
+    .movie__more {
+        margin: 61px 0px 119px;
     }
 }
 

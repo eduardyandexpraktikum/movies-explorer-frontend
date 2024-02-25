@@ -233,13 +233,13 @@
     }
 
     .header.burger-open .header__menu {
-        z-index: 2;
+        z-index: 3;
         position: fixed;
         display: block;
     }
 
     .header.burger-open .header__profile {
-        z-index: 2;
+        z-index: 3;
         position: fixed;
     }
 

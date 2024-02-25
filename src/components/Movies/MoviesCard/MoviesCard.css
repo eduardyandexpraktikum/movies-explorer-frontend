@@ -98,10 +98,11 @@
 @media screen and (max-width: 800px) {
     .movie__imagebox {
         width: 339px;
+        height: 190px;
     }
 
     .movie__infobox {
-        margin: 23px 0px 0px;
+        margin: 25px 0px 0px;
     }
 }
 

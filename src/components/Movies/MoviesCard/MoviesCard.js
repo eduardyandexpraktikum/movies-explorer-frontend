@@ -32,7 +32,7 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
 
     return (
         <li className="movie__card">
-            <div>{movie.nameRu}</div>
+            {/* <div>{movie.nameRu}</div> */}
             <div className="movie__imagebox">
                 <a href={movie.trailerLink} target="_blank" rel="noreferrer">
                     <img className="movie__image" src={pathname === '/movies' ? `https://api.nomoreparties.co${movie.image.url}` : `${movie.image}`} alt={movie.nameRU} />
