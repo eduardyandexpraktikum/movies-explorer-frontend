@@ -1,6 +1,16 @@
 import { useLocation } from "react-router-dom";
 
-function SearchForm({ handleSearchMovies, handleSearchSavedMovies, searchInput, searchSavedInput, handleSearchChange, handleSavedSearchChange, shortSwitch, handleShortSwitch }) {
+function SearchForm({
+    handleSearchMovies,
+    handleSearchSavedMovies,
+    searchInput,
+    searchSavedInput,
+    handleSearchChange,
+    handleSavedSearchChange,
+    shortSwitch,
+    savedShortSwitch,
+    handleShortSwitch,
+    handleSavedShortSwitch }) {
 
     const { pathname } = useLocation();
 
@@ -19,10 +29,10 @@ function SearchForm({ handleSearchMovies, handleSearchSavedMovies, searchInput, 
     return (
         <div className="search">
             <div className="search__box">
-                {/* <form onSubmit={handleMoviesSearchSubmit}> */}
                 <form onSubmit={pathname === '/saved-movies' ? handleSavedMoviesSearchSubmit : handleMoviesSearchSubmit}>
                     <div className="search__input">
-                        <input name='search'
+                        <input
+                            name='search'
                             className="search__input-area"
                             type="text"
                             placeholder="Фильм"
@@ -34,7 +44,18 @@ function SearchForm({ handleSearchMovies, handleSearchSavedMovies, searchInput, 
                         <button className="search__enter" type="submit" />
                     </div>
                     <div className="search__shorts">
-                        <button className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`} onClick={handleShortSwitch} type="button" />
+                        {pathname === '/saved-movies'
+                            ? <button
+                                className={`search__shorts-tumb ${!savedShortSwitch ? "" : "search__shorts-tumb-enabled"}`}
+                                onClick={handleSavedShortSwitch}
+                                type="button"
+                            />
+                            : <button
+                                className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`}
+                                onClick={handleShortSwitch}
+                                type="button"
+                            />
+                        }
                         <p className="search__shorts-description">Короткометражки</p>
                     </div>
                 </form>

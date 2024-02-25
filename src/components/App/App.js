@@ -80,6 +80,9 @@ function App() {
             .then((res) => {
                 setCurrentUser(res);
                 setSuccessUpdate(true);
+                setTimeout(() => {
+                    setSuccessUpdate(false);
+                }, 2000);
             })
             .catch((err) => {
                 console.log(`Ошибка: ${err}`)

@@ -7,7 +7,7 @@ export function Profile({ loggedIn, handleLogout, handlePatchMe, successUpdate, 
 
     const { values, isValid, handleChange, formReset } = useFormValidation();
 
-    const buttonChecker = !isValid && (values.name === currentUser.name || values.email === currentUser.email)
+    const buttonChecker = isValid && (values.name !== currentUser.name || values.email !== currentUser.email)
 
     useEffect(() => {
         formReset({
@@ -52,14 +52,13 @@ export function Profile({ loggedIn, handleLogout, handlePatchMe, successUpdate, 
                                 <input className="profile__input" name="email" value={values.email || ""} onChange={handleChange} required />
                             </div>
                         </div>
-                        <span className={``}></span>
                         <div className="profile__links">
-                            <button className="profile__edit" type="submit" disabled={buttonChecker}>Редактировать</button>
-
+                            <button className="profile__edit" type="submit" disabled={!buttonChecker}>Редактировать</button>
                             <Link to={'/'} className="profile__exit" onClick={handleLogout}>Выйти из аккаунта</Link>
                         </div>
                     </form>
                 </section >
+                <span className={successUpdate ? "profile__status" : "profile__status_disabled "}>Данные профиля изменены</span>
             </main>
         </>
     )
