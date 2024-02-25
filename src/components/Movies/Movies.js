@@ -62,8 +62,12 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
     }, [movieSearch, shortSwitch]);
 
     useEffect(() => {
-        setFilteredSavedMovies(savedMovies);
-    }, [savedMovies]);
+        setFilteredSavedMovies(savedMovies.filter((movie) => {
+            return (
+                savedShortSwitch ? (movie.duration <= SHORTMOVIE) : true
+            )
+        }));
+    }, [savedMovies, searchSavedInput, savedShortSwitch]);
 
     function handleSearchMovies(search) {
         if (!moviesList.length) {
