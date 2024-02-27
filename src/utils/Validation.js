@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 const regExEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 const regExName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u;
@@ -21,18 +21,12 @@ export function useFormValidation() {
         if (name === 'name') {
             if (!regExName.test(value)) {
                 setErrors({ ...errors, [name]: 'Некорректное имя' });
+            } else if (value === null || value === '') {
+                setErrors({ ...errors, [name]: 'Введите имя' });
             } else {
                 setErrors({ ...errors, [name]: '' });
             }
         }
-
-        // if (name === 'password') {
-        //     if (!regExPassword.test(value)) {
-        //         setErrors({ ...errors, [name]: 'Некорректный пароль' });
-        //     } else {
-        //         setErrors({ ...errors, [name]: '' });
-        //     }
-        // }
 
         if (name === 'password') {
             if (value === null || value === '') {
@@ -45,6 +39,8 @@ export function useFormValidation() {
         if (name === 'email') {
             if (!regExEmail.test(value)) {
                 setErrors({ ...errors, [name]: 'Некорректный email' });
+            } else if (value === null || value === '') {
+                setErrors({ ...errors, [name]: 'Введите email' });
             } else {
                 setErrors({ ...errors, [name]: '' });
             }
@@ -59,6 +55,14 @@ export function useFormValidation() {
         }
     };
 
+    useEffect(() => {
+        if (!values.email || !values.password) {
+            setIsValid(false);
+        } else {
+            setIsValid(true);
+        }
+    }, [values, setIsValid])
+
     const formReset = useCallback(
         (newValues = {}, newErrors = {}, newIsValid = false) => {
             setValues(newValues);
@@ -66,5 +70,5 @@ export function useFormValidation() {
             setIsValid(newIsValid);
         }, [setValues, setErrors, setIsValid]);
 
-    return { values, setValues, handleChange, errors, isValid, formReset };
+    return { values, setValues, handleChange, errors, isValid, setIsValid, formReset };
 }

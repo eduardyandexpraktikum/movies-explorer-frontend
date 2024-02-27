@@ -16,13 +16,11 @@ function SearchForm({
 
     function handleMoviesSearchSubmit(e) {
         e.preventDefault();
-        console.log("ищем по всем фильмам")
         handleSearchMovies(e.target.search.value);
     };
 
     function handleSavedMoviesSearchSubmit(e) {
         e.preventDefault();
-        console.log("ищем по сохраненным фильмам")
         handleSearchSavedMovies(e.target.search.value);
     };
 
@@ -48,12 +46,12 @@ function SearchForm({
                             ? <button
                                 className={`search__shorts-tumb ${!savedShortSwitch ? "" : "search__shorts-tumb-enabled"}`}
                                 onClick={handleSavedShortSwitch}
-                                type="button"
+                                type="submit"
                             />
                             : <button
                                 className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`}
                                 onClick={handleShortSwitch}
-                                type="button"
+                                type="submit"
                             />
                         }
                         <p className="search__shorts-description">Короткометражки</p>

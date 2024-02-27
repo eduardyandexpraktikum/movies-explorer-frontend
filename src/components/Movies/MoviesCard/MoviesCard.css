@@ -27,6 +27,7 @@
     background-image: url(../../../images/savedmovie.svg);
     height: 21px;
     width: 21px;
+    cursor: pointer;
 }
 
 .movie__save-mark {

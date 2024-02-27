@@ -38,7 +38,7 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
                     <img className="movie__image" src={pathname === '/movies' ? `https://api.nomoreparties.co${movie.image.url}` : `${movie.image}`} alt={movie.nameRU} />
                 </a>
                 {pathname === "/movies" ?
-                    <button className={`movie__button ${addedMovie ? "movie__added-mark" : "movie__save-mark"}`} type="button" onClick={handleAddMovie}></button>
+                    <button className={`movie__button ${addedMovie ? "movie__added-mark" : "movie__save-mark"}`} type="button" onClick={addedMovie ? () => handleDeleteMovie(movie._id) : handleAddMovie}></button>
                     :
                     <button className="movie__button movie__button-remove" type="button" onClick={() => handleDeleteMovie(movie._id)}></button>
                 }

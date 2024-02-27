@@ -7,6 +7,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { MoviesApi } from '../../utils/MoviesApi';
 import { SavedMovieCardList } from '../SavedMovies/SavedMoviesCardList/SavedMoviesCardList';
 import { SHORTMOVIE } from '../../utils/Constants';
+import { useNavigate } from "react-router-dom";
 
 export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, openSavedMovies }) {
 
@@ -18,6 +19,17 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
     const [loading, setLoading] = useState(false); //прелоадер вкл/выкл
     const [filteredMovies, setFilteredMovies] = useState([]); //массив отфильтованых фильмов
     const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
+
+    const { pathname } = useNavigate();
+
+    useEffect(() => {
+        (pathname === '/saved-movies')
+            &&
+            setFilteredSavedMovies(filteredSavedMovies)
+        setSavedShortSwitch(false)
+        console.log('1')
+
+    }, [pathname, filteredSavedMovies])
 
     const movieSearch = useCallback((search, shortSwitch, movies) => {
         setSearchInput(search);
@@ -31,13 +43,6 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
             )
         }));
     }, []);
-
-    // const newFilteredList = savedMovies.filter((movie) => {
-    //     return (
-    //         shortSwitch ? (movie.duration <= SHORTMOVIE) : true
-    //     )
-    // })
-    // console.log(newFilteredList);
 
     const savedMovieSearch = useCallback((search, savedShortSwitch, savedMovies) => {
         setSearchSavedInput(search)

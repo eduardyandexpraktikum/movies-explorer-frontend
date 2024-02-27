@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export function Login({ onSubmit }) {
 
-    const { values, setValues, handleChange, errors, isValid, formReset } = useFormValidation();
+    const { values, setValues, handleChange, errors, isValid, setIsValid, formReset } = useFormValidation();
 
     useEffect(() => {
         formReset();
@@ -25,7 +25,7 @@ export function Login({ onSubmit }) {
                 <h1 className="login__header">Рады видеть!</h1>
                 <form onSubmit={handleSubmit} noValidate>
                     <p className="login__label">E-mail</p>
-                    <input className="login__field" value={values.email || ''} name="email" onChange={handleChange} type="email" />
+                    <input className="login__field" value={values.email} name="email" onChange={handleChange} type="email" />
                     <span className="registration__error-label">{errors.email || ""}</span>
                     <p className="login__label">Пароль</p>
                     <input className="login__field" value={values.password || ''} name="password" onChange={handleChange} type="password" />
