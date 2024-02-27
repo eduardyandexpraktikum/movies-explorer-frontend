@@ -98,6 +98,11 @@ function App() {
             .catch((err) => { console.log(`Ошибка ${err}`) });
     }
 
+    function handleDeleteMovieFromList(movieId) {
+        const film = savedMovies.find((movie) => movie.movieId === movieId);
+        handleDeleteMovie(film._id);
+    }
+
     function checkLike(movie) {
         const isLiked = savedMovies.some(element => movie.id === element.movieId);
 
@@ -156,6 +161,7 @@ function App() {
                             savedMovies={savedMovies}
                             checkLike={checkLike}
                             handleDeleteMovie={handleDeleteMovie}
+                            handleDeleteMovieFromList={handleDeleteMovieFromList}
                             openSavedMovies={false}
                         />
                     }
@@ -170,6 +176,7 @@ function App() {
                             savedMovies={savedMovies}
                             checkLike={checkLike}
                             handleDeleteMovie={handleDeleteMovie}
+                            handleDeleteMovieFromList={handleDeleteMovieFromList}
                             openSavedMovies={true}
                         />
                     }

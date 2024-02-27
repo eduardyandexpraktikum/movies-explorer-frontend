@@ -9,7 +9,7 @@ import { SavedMovieCardList } from '../SavedMovies/SavedMoviesCardList/SavedMovi
 import { SHORTMOVIE } from '../../utils/Constants';
 import { useNavigate } from "react-router-dom";
 
-export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, openSavedMovies }) {
+export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, openSavedMovies, handleDeleteMovieFromList }) {
 
     const [moviesList, setMoviesList] = useState([]); //все фильмы с nomoreparties
     const [searchInput, setSearchInput] = useState(''); // строка поиска
@@ -22,13 +22,13 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
 
     const { pathname } = useNavigate();
 
+
     useEffect(() => {
         (pathname === '/saved-movies')
             &&
             setFilteredSavedMovies(filteredSavedMovies)
         setSavedShortSwitch(false)
-        console.log('1')
-
+        // console.log('1')
     }, [pathname, filteredSavedMovies])
 
     const movieSearch = useCallback((search, shortSwitch, movies) => {
@@ -139,6 +139,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
                         searchInput={searchInput}
                         savedMovies={savedMovies}
                         handleDeleteMovie={handleDeleteMovie}
+                        handleDeleteMovieFromList={handleDeleteMovieFromList}
                     />
                     :
                     <SavedMovieCardList
@@ -149,6 +150,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
                         searchInput={searchInput}
                         savedMovies={savedMovies}
                         handleDeleteMovie={handleDeleteMovie}
+                        handleDeleteMovieFromList={handleDeleteMovieFromList}
                     />
                 }
             </main>

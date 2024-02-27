@@ -1,7 +1,7 @@
 import { MovieCard } from "../../Movies/MoviesCard/MoviesCard";
 import Preloader from "../../Movies/Preloader/Preloader";
 
-export function SavedMovieCardList({ loading, moviesList, filteredSavedMovies, checkLike, searchInput, savedMovies, handleDeleteMovie, shortSwitch }) {
+export function SavedMovieCardList({ loading, moviesList, filteredSavedMovies, checkLike, searchInput, savedMovies, handleDeleteMovie, shortSwitch, handleDeleteMovieFromList }) {
 
     return (
         <div className="movie">
@@ -17,6 +17,7 @@ export function SavedMovieCardList({ loading, moviesList, filteredSavedMovies, c
                                 savedMovies={savedMovies}
                                 checkLike={checkLike}
                                 handleDeleteMovie={handleDeleteMovie}
+                                handleDeleteMovieFromList={handleDeleteMovieFromList}
                             />
                         )
                     })

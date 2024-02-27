@@ -46,12 +46,12 @@ function SearchForm({
                             ? <button
                                 className={`search__shorts-tumb ${!savedShortSwitch ? "" : "search__shorts-tumb-enabled"}`}
                                 onClick={handleSavedShortSwitch}
-                                type="submit"
+                                type="button"
                             />
                             : <button
                                 className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`}
                                 onClick={handleShortSwitch}
-                                type="submit"
+                                type="button"
                             />
                         }
                         <p className="search__shorts-description">Короткометражки</p>

@@ -5,7 +5,7 @@ import { MoviesLayout } from "../../../utils/MoviesLayout";
 import { useLocation } from "react-router-dom";
 import { DESKTOP_LAYOUT_WIDTH, TABLET_LAYOUT_WIDTH, MOBILE_LAYOUT_WIDTH } from "../../../utils/Constants";
 
-function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchInput, savedMovies, handleDeleteMovie }) {
+function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchInput, savedMovies, handleDeleteMovie, handleDeleteMovieFromList }) {
 
     const [widthScreen, setWidthScreen] = useState('');
     const movies = filteredMovies.slice(0, widthScreen);
@@ -52,6 +52,7 @@ function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchI
                                     checkLike={checkLike}
                                     savedMovies={savedMovies}
                                     handleDeleteMovie={handleDeleteMovie}
+                                    handleDeleteMovieFromList={handleDeleteMovieFromList}
                                 />
                             )
                         })
