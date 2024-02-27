@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { MovieCard } from "../../Movies/MoviesCard/MoviesCard";
 import Preloader from "../../Movies/Preloader/Preloader";
 
-export function SavedMovieCardList({ loading, moviesList, filteredSavedMovies, checkLike, searchInput, savedMovies, handleDeleteMovie, shortSwitch, handleDeleteMovieFromList }) {
+export function SavedMovieCardList({ loading, moviesList, filteredSavedMovies, checkLike, searchInput, savedMovies, handleDeleteMovie, shortSwitch, handleDeleteMovieFromList, defaultSavedMovies }) {
+
+    useEffect(() => {
+        defaultSavedMovies();
+    }, [])
 
     return (
         <div className="movie">

@@ -12,26 +12,26 @@ function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchI
     const { pathname } = useLocation();
 
     useEffect(() => {
-        if (pathname === "/movies") {
-            setWidthScreen(MoviesLayout().cards);
+        // if (pathname === "/movies") {
+        setWidthScreen(MoviesLayout().cards);
 
-            function handleMoviesLayout() {
+        function handleMoviesLayout() {
 
-                if (window.innerWidth < DESKTOP_LAYOUT_WIDTH) {
-                    setWidthScreen(MoviesLayout().cards)
-                }
-                if (window.innerWidth < TABLET_LAYOUT_WIDTH) {
-                    setWidthScreen(MoviesLayout().cards)
-                }
-                if (window.innerWidth < MOBILE_LAYOUT_WIDTH) {
-                    setWidthScreen(MoviesLayout().cards)
-                }
+            if (window.innerWidth < DESKTOP_LAYOUT_WIDTH) {
+                setWidthScreen(MoviesLayout().cards)
             }
-
-            window.addEventListener("resize", handleMoviesLayout);
-            return () => window.removeEventListener("resize", handleMoviesLayout);
+            if (window.innerWidth < TABLET_LAYOUT_WIDTH) {
+                setWidthScreen(MoviesLayout().cards)
+            }
+            if (window.innerWidth < MOBILE_LAYOUT_WIDTH) {
+                setWidthScreen(MoviesLayout().cards)
+            }
         }
-    }, [pathname])
+
+        window.addEventListener("resize", handleMoviesLayout);
+        return () => window.removeEventListener("resize", handleMoviesLayout);
+        // }
+    }, [filteredMovies])
 
     function handleButtonMore() {
         setWidthScreen(widthScreen + MoviesLayout().add);

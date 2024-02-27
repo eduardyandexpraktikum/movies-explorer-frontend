@@ -7,7 +7,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { MoviesApi } from '../../utils/MoviesApi';
 import { SavedMovieCardList } from '../SavedMovies/SavedMoviesCardList/SavedMoviesCardList';
 import { SHORTMOVIE } from '../../utils/Constants';
-import { useNavigate } from "react-router-dom";
 
 export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, openSavedMovies, handleDeleteMovieFromList }) {
 
@@ -20,16 +19,12 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
     const [filteredMovies, setFilteredMovies] = useState([]); //массив отфильтованых фильмов
     const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
 
-    const { pathname } = useNavigate();
-
-
-    useEffect(() => {
-        (pathname === '/saved-movies')
-            &&
-            setFilteredSavedMovies(filteredSavedMovies)
-        setSavedShortSwitch(false)
-        // console.log('1')
-    }, [pathname, filteredSavedMovies])
+    function defaultSavedMovies() {
+        console.log('mounted')
+        setFilteredSavedMovies(savedMovies);
+        setSavedShortSwitch(false);
+        setSearchSavedInput('');
+    }
 
     const movieSearch = useCallback((search, shortSwitch, movies) => {
         setSearchInput(search);
@@ -104,7 +99,6 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         setSavedShortSwitch(!savedShortSwitch);
     }
 
-
     function handleSearchChange(e) {
         setSearchInput(e.target.value);
     }
@@ -151,6 +145,7 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
                         savedMovies={savedMovies}
                         handleDeleteMovie={handleDeleteMovie}
                         handleDeleteMovieFromList={handleDeleteMovieFromList}
+                        defaultSavedMovies={defaultSavedMovies}
                     />
                 }
             </main>
