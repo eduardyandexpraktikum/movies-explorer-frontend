@@ -50,7 +50,6 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
 
     useEffect(() => {
         if (searchInput !== '') {
-            console.log(searchInput)
             localStorage.setItem("text", JSON.stringify(searchInput));
             movieSearch(searchInput, shortSwitch, moviesList);
         }

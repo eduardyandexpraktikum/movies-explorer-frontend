@@ -38,7 +38,7 @@ function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchI
             <ul className="movie__area">
                 {loading
                     ? <Preloader />
-                    : !searchInput
+                    : !localStorage.getItem('text')
                         ? ''
                         : filteredMovies.length === 0
                             ? <span className="movie__search-result">Ничего не найдено</span>
