@@ -3,7 +3,7 @@ import { useFormValidation } from "../../utils/Validation";
 
 export function Register({ onSubmit }) {
 
-    const { values, setValues, handleChange, errors, isValid, formReset } = useFormValidation();
+    const { values, handleChange, errors, isValid } = useFormValidation();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,13 +21,13 @@ export function Register({ onSubmit }) {
                 <h1 className="registration__header">Добро пожаловать!</h1>
                 <form onSubmit={handleSubmit} noValidate>
                     <p className="registration__label">Имя</p>
-                    <input className="registration__field" value={values.name} name="name" type="text" onChange={handleChange} />
+                    <input className="registration__field" value={values.name} name="name" type="text" onChange={handleChange} required />
                     <span className="registration__error-label">{errors.name || ""}</span>
                     <p className="registration__label">E-mail</p>
-                    <input className="registration__field" value={values.email} name="email" type="email" onChange={handleChange} />
+                    <input className="registration__field" value={values.email} name="email" type="email" onChange={handleChange} required />
                     <span className="registration__error-label">{errors.email || ""}</span>
                     <p className="registration__label">Пароль</p>
-                    <input className="registration__field" value={values.password} name="password" type="password" onChange={handleChange} />
+                    <input className="registration__field" value={values.password} name="password" type="password" onChange={handleChange} required />
                     <span className="registration__error-label">{errors.password || ""}</span>
                     <button className="registration__submit" type="submit" disabled={!isValid}>Зарегистрироваться</button>
                 </form>

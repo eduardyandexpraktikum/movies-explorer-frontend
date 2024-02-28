@@ -17,7 +17,6 @@ function App() {
 
     const navigate = useNavigate();
     const [currentUser, setCurrentUser] = useState({});
-    const [movies, setMovies] = useState([]);
     const [savedMovies, setSavedMovies] = useState([]);
     const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token') ? true : false);
     const [successUpdate, setSuccessUpdate] = useState(false);
@@ -157,7 +156,6 @@ function App() {
                         <ProtectedRoute
                             element={Movies}
                             loggedIn={loggedIn}
-                            movies={movies}
                             savedMovies={savedMovies}
                             checkLike={checkLike}
                             handleDeleteMovie={handleDeleteMovie}
@@ -172,7 +170,6 @@ function App() {
                         <ProtectedRoute
                             element={Movies}
                             loggedIn={loggedIn}
-                            movies={movies}
                             savedMovies={savedMovies}
                             checkLike={checkLike}
                             handleDeleteMovie={handleDeleteMovie}

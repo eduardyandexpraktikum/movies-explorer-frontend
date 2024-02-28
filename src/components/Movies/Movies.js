@@ -42,14 +42,19 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         setSearchSavedInput(search)
         setFilteredSavedMovies(savedMovies.filter((movie) => {
             const searchText = movie.nameRU.toLowerCase().includes(search.toLowerCase());
-            console.log(savedShortSwitch)
-            console.log(searchText)
-
             return (
                 savedShortSwitch ? (searchText && movie.duration <= SHORTMOVIE) : searchText
             )
         }));
     }, []);
+
+    useEffect(() => {
+        if (searchInput !== '') {
+            console.log(searchInput)
+            localStorage.setItem("text", JSON.stringify(searchInput));
+            movieSearch(searchInput, shortSwitch, moviesList);
+        }
+    }, [shortSwitch])
 
     useEffect(() => {
         if (localStorage.movies && localStorage.shorts && localStorage.text) {

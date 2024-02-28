@@ -25,10 +25,10 @@ export function Login({ onSubmit }) {
                 <h1 className="login__header">Рады видеть!</h1>
                 <form onSubmit={handleSubmit} noValidate>
                     <p className="login__label">E-mail</p>
-                    <input className="login__field" value={values.email} name="email" onChange={handleChange} type="email" />
+                    <input className="login__field" value={values.email} name="email" onChange={handleChange} type="email" required />
                     <span className="registration__error-label">{errors.email || ""}</span>
                     <p className="login__label">Пароль</p>
-                    <input className="login__field" value={values.password || ''} name="password" onChange={handleChange} type="password" />
+                    <input className="login__field" value={values.password || ''} name="password" onChange={handleChange} type="password" required />
                     <span className="registration__error-label">{errors.password || ""}</span>
                     <button className="login__submit" type="submit" disabled={!isValid}>Войти</button>
                 </form>
