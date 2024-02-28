@@ -27,7 +27,6 @@ export function MovieCard({ movie, moviesList, savedMovies, checkLike, handleDel
     function handleToggleLike() {
         if (addedMovie) {
             handleDeleteMovieFromList(movie.id)
-
             checkLike(movie)
         } else {
             handleAddMovie()

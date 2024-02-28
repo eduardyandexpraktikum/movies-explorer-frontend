@@ -20,7 +20,6 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
     const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
 
     function defaultSavedMovies() {
-        console.log('mounted')
         setFilteredSavedMovies(savedMovies);
         setSavedShortSwitch(false);
         setSearchSavedInput('');
@@ -43,6 +42,9 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
         setSearchSavedInput(search)
         setFilteredSavedMovies(savedMovies.filter((movie) => {
             const searchText = movie.nameRU.toLowerCase().includes(search.toLowerCase());
+            console.log(savedShortSwitch)
+            console.log(searchText)
+
             return (
                 savedShortSwitch ? (searchText && movie.duration <= SHORTMOVIE) : searchText
             )
@@ -62,12 +64,8 @@ export function Movies({ loggedIn, checkLike, handleDeleteMovie, savedMovies, op
     }, [movieSearch, shortSwitch]);
 
     useEffect(() => {
-        setFilteredSavedMovies(savedMovies.filter((movie) => {
-            return (
-                savedShortSwitch ? (movie.duration <= SHORTMOVIE) : true
-            )
-        }));
-    }, [savedMovies, searchSavedInput, savedShortSwitch]);
+        savedMovieSearch(searchSavedInput, savedShortSwitch, savedMovies)
+    }, [savedShortSwitch, savedMovies]);
 
     function handleSearchMovies(search) {
         if (!moviesList.length) {
