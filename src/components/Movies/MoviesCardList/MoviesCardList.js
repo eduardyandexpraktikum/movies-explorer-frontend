@@ -38,20 +38,23 @@ function MovieCardList({ loading, moviesList, filteredMovies, checkLike, searchI
             <ul className="movie__area">
                 {loading
                     ? <Preloader />
-                    : filteredMovies.length === 0 ? <span className="movie__search-result">Ничего не найдено</span> :
-                        movies.map((movie) => {
-                            return (
-                                <MovieCard
-                                    key={movie.id}
-                                    movie={movie}
-                                    moviesList={moviesList}
-                                    checkLike={checkLike}
-                                    savedMovies={savedMovies}
-                                    handleDeleteMovie={handleDeleteMovie}
-                                    handleDeleteMovieFromList={handleDeleteMovieFromList}
-                                />
-                            )
-                        })
+                    : !searchInput
+                        ? ''
+                        : filteredMovies.length === 0
+                            ? <span className="movie__search-result">Ничего не найдено</span>
+                            : movies.map((movie) => {
+                                return (
+                                    <MovieCard
+                                        key={movie.id}
+                                        movie={movie}
+                                        moviesList={moviesList}
+                                        checkLike={checkLike}
+                                        savedMovies={savedMovies}
+                                        handleDeleteMovie={handleDeleteMovie}
+                                        handleDeleteMovieFromList={handleDeleteMovieFromList}
+                                    />
+                                )
+                            })
                 }
             </ul>
             <button className={`movie__more ${(widthScreen >= filteredMovies.length || filteredMovies.length === 0) && "movie__more_disabled"}`} type="button" onClick={handleButtonMore}>Еще</button>
