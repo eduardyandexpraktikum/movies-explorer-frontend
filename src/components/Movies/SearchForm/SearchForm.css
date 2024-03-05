@@ -15,6 +15,7 @@
     margin-right: 10px;
     border-radius: 8px;
     background-color: #2F2F2F;
+    padding-left: 13px;
 }
 
 .search__enter {
@@ -26,6 +27,7 @@
     border: none;
     background-color: transparent;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .search__shorts {
@@ -38,7 +40,7 @@
 }
 
 .search__shorts-tumb {
-    background-image: url(../../../images/smalltumb.png);
+    background-image: url(../../../images/smalltumboff.png);
     width: 36px;
     border: none;
     background-color: transparent;
@@ -46,8 +48,8 @@
     background-repeat: no-repeat;
 }
 
-.search__shorts-tumb-disabled {
-    background-image: url(../../../images/smalltumboff.png);
+.search__shorts-tumb-enabled {
+    background-image: url(../../../images/smalltumb.png);
 }
 
 .search__shorts-description {
@@ -66,7 +68,6 @@ input::placeholder {
     line-height: 18px;
     letter-spacing: 0px;
     text-align: left;
-    text-indent: 20px;
 }
 
 @media screen and (max-width: 800px) {

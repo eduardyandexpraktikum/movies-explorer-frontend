@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
-function Header() {
+function Header({ loggedIn }) {
 
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
@@ -10,7 +10,6 @@ function Header() {
         document.body.classList.toggle('fix-scroll')
     }
 
-
     const { pathname } = useLocation();
 
     return (
@@ -18,7 +17,7 @@ function Header() {
 
             <div className="header__block">
                 <Link to={'/'} className={'header__logo'}></Link>
-                {pathname !== "/" && (
+                {loggedIn && (
                     <div className="header__menu">
                         <div className="header__linkblock">
                             <Link to={'/'} className={'header__main'}>Главная</Link>
@@ -28,7 +27,7 @@ function Header() {
                         </div>
                     </div>)}
                 <div className="header__authorization">
-                    {pathname === "/" ? (
+                    {!loggedIn ? (
                         <>
                             <Link to={'/signup'} className={'header__signup'}>Регистрация</Link>
                             <Link to={'/signin'} className={'header__signin'}>Войти</Link>

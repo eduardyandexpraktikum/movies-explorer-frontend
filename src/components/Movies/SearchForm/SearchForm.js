@@ -1,23 +1,59 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-function SearchForm() {
+function SearchForm({
+    handleSearchMovies,
+    handleSearchSavedMovies,
+    searchInput,
+    searchSavedInput,
+    handleSearchChange,
+    handleSavedSearchChange,
+    shortSwitch,
+    savedShortSwitch,
+    handleShortSwitch,
+    handleSavedShortSwitch }) {
 
-    const [isTumbDisabled, setIsTumbDisabled] = useState(false);
+    const { pathname } = useLocation();
 
-    function tumbSwitch() {
-        setIsTumbDisabled(!isTumbDisabled)
-    }
+    function handleMoviesSearchSubmit(e) {
+        e.preventDefault();
+        handleSearchMovies(e.target.search.value);
+    };
+
+    function handleSavedMoviesSearchSubmit(e) {
+        e.preventDefault();
+        handleSearchSavedMovies(e.target.search.value);
+    };
 
     return (
         <div className="search">
             <div className="search__box">
-                <form>
+                <form onSubmit={pathname === '/saved-movies' ? handleSavedMoviesSearchSubmit : handleMoviesSearchSubmit}>
                     <div className="search__input">
-                        <input className="search__input-area" placeholder="Фильм" type="text" />
-                        <button className="search__enter" type="button" />
+                        <input
+                            name='search'
+                            className="search__input-area"
+                            type="text"
+                            placeholder="Фильм"
+                            minLength="1"
+                            value={pathname === '/saved-movies' ? searchSavedInput : searchInput}
+                            onChange={pathname === '/saved-movies' ? handleSavedSearchChange : handleSearchChange}
+                            required
+                        />
+                        <button className="search__enter" type="submit" />
                     </div>
                     <div className="search__shorts">
-                        <button className={`search__shorts-tumb ${!isTumbDisabled ? "" : "search__shorts-tumb-disabled"}`} onClick={tumbSwitch} type="button" />
+                        {pathname === '/saved-movies'
+                            ? <button
+                                className={`search__shorts-tumb ${!savedShortSwitch ? "" : "search__shorts-tumb-enabled"}`}
+                                onClick={handleSavedShortSwitch}
+                                type="button"
+                            />
+                            : <button
+                                className={`search__shorts-tumb ${!shortSwitch ? "" : "search__shorts-tumb-enabled"}`}
+                                onClick={handleShortSwitch}
+                                type="button"
+                            />
+                        }
                         <p className="search__shorts-description">Короткометражки</p>
                     </div>
                 </form>

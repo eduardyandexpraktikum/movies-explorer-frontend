@@ -57,6 +57,8 @@
 
 .profile__links {
     margin: 220px auto 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .profile__edit {
@@ -67,6 +69,14 @@
     text-align: center;
     color: #fff;
     margin-bottom: 16px;
+    background-color: transparent;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.profile__edit:disabled {
+    color: #424242;
 }
 
 .profile__exit {
@@ -79,6 +89,17 @@
     text-align: center;
     text-decoration: none;
     justify-content: center;
+}
+
+.profile__status {
+    color: #3DDC84;
+    margin: 0px auto 0px;
+    display: block;
+    text-align: center;
+}
+
+.profile__status_disabled {
+    display: none;
 }
 
 @media screen and (max-width: 400px) {
